@@ -1,0 +1,1120 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>ST27 Irish Team</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+:root{
+  --bg:#F6F8F6; --paper:#FFFFFF; --ink:#0F2A21; --muted:#4F6A60; --faint:#88A097; --rule:#DCE6E1;
+  --green:#0E6B4C; --green-2:#E3F0EA; --orange:#D9711C; --orange-2:#FCEBDD; --gold:#A77E1B; --gold-2:#F6EDD6; --blue:#1F5F8B; --blue-2:#E1EDF5; --red:#B3372B; --red-2:#F8E3E0;
+  --shadow:0 1px 2px rgba(15,42,33,.06),0 8px 24px rgba(15,42,33,.07);
+  --f-display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --f-body:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0C1814; --paper:#13231D; --ink:#E7F1EC; --muted:#A3BBB1; --faint:#6D867C; --rule:#24382F;
+    --green:#3FB488; --green-2:#17332A; --orange:#F0954A; --orange-2:#3A2616; --gold:#D8B45A; --gold-2:#352C15; --blue:#6BB2E3; --blue-2:#132B3B; --red:#EE7F72; --red-2:#3B1C18;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+    color-scheme:dark;
+    --bg:#0C1814; --paper:#13231D; --ink:#E7F1EC; --muted:#A3BBB1; --faint:#6D867C; --rule:#24382F;
+    --green:#3FB488; --green-2:#17332A; --orange:#F0954A; --orange-2:#3A2616; --gold:#D8B45A; --gold-2:#352C15; --blue:#6BB2E3; --blue-2:#132B3B; --red:#EE7F72; --red-2:#3B1C18;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.5;padding-inline:16px;padding-block:0 48px}
+.wrap{max-width:1120px;margin:0 auto;display:grid;gap:44px}
+a{color:var(--green)}
+.hero{padding-top:36px;display:grid;gap:14px}
+.eyebrow{font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--orange)}
+h1{font-family:var(--f-display);font-weight:900;font-size:clamp(52px,9vw,104px);line-height:.88;margin:0;letter-spacing:.005em;text-transform:uppercase;text-wrap:balance}
+h1 .g{color:var(--green)}
+.lede{font-size:18.5px;max-width:62ch;color:var(--muted);margin:0}
+.tally{display:flex;flex-wrap:wrap;gap:10px 28px;padding-top:6px}
+.tally div{display:flex;flex-direction:column}
+.tally b{font-family:var(--f-display);font-size:40px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+.tally small{font-size:12px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted)}
+nav.jump{display:flex;flex-wrap:wrap;gap:8px}
+nav.jump a{font-weight:600;font-size:14px;text-decoration:none;color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:999px;padding:6px 13px}
+nav.jump a:hover{border-color:var(--green)}
+h2{font-family:var(--f-display);font-weight:800;font-size:40px;line-height:1;margin:0 0 6px;text-transform:uppercase;letter-spacing:.01em}
+.sec-intro{color:var(--muted);margin:0 0 18px;max-width:66ch}
+.roster{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px}
+.card{background:var(--paper);border:1px solid var(--rule);border-radius:14px;padding:20px;display:grid;gap:14px;align-content:start;box-shadow:var(--shadow);scroll-margin-top:16px}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.name{font-family:var(--f-display);font-weight:900;font-size:40px;line-height:.9;text-transform:uppercase;margin:0}
+.aka{color:var(--muted);font-size:14px;margin-top:4px}
+.hcp{flex:none;text-align:center;border:2px solid var(--green);border-radius:10px;padding:6px 10px;min-width:66px}
+.hcp b{display:block;font-family:var(--f-display);font-weight:800;font-size:30px;line-height:1;color:var(--green);font-variant-numeric:tabular-nums}
+.hcp small{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.role{display:inline-flex;align-items:center;gap:8px;background:var(--green-2);color:var(--green);font-weight:700;font-size:14px;border-radius:8px;padding:6px 10px;width:fit-content}
+.role.vc{background:var(--orange-2);color:var(--orange)}
+.role.cap{background:var(--green);color:var(--paper)}
+.role-desc{margin:-6px 0 0;font-size:14.5px;color:var(--muted)}
+.strength{margin:0;font-size:16px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.stat{background:var(--bg);border-radius:9px;padding:8px 10px}
+.stat b{display:block;font-family:var(--f-display);font-weight:800;font-size:24px;line-height:1.05;font-variant-numeric:tabular-nums}
+.stat small{display:block;font-size:11.5px;color:var(--muted);line-height:1.25}
+.honours{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.honours li{display:grid;grid-template-columns:20px 1fr;gap:6px;font-size:14.5px}
+.honours li::before{content:"";width:9px;height:9px;margin-top:7px;border-radius:50%;background:var(--gold)}
+.best{font-size:14.5px;border-top:1px dashed var(--rule);padding-top:10px;margin:0}
+.best b{color:var(--green)}
+.combos{display:grid;gap:18px}
+.combo-group h3{font-family:var(--f-display);font-weight:800;font-size:26px;text-transform:uppercase;margin:0 0 4px}
+.combo-group p.hint{margin:0 0 12px;color:var(--muted);font-size:15px}
+.options{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.opt{background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:16px;display:grid;gap:10px;align-content:start}
+.opt-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.opt-head b{font-family:var(--f-display);font-size:22px;font-weight:800;text-transform:uppercase}
+.opt-head span{font-size:12.5px;color:var(--orange);font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.pairs{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.pairs li{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-weight:600}
+.pairs .plus{color:var(--faint);font-weight:400}
+.pairs .tag{font-weight:500;font-size:12.5px;color:var(--muted);background:var(--bg);border-radius:6px;padding:1px 7px}
+.why{margin:0;font-size:14.5px;color:var(--muted)}
+.discuss{justify-self:start;font:inherit;font-size:14px;font-weight:600;background:transparent;color:var(--green);border:1.5px solid var(--green);border-radius:8px;padding:6px 12px;cursor:pointer}
+.discuss:hover{background:var(--green-2)}
+.discuss:focus-visible,nav.jump a:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.singles{background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:16px;display:grid;gap:10px}
+.order{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;counter-reset:s}
+.order li{counter-increment:s;background:var(--bg);border-radius:9px;padding:9px 11px;display:grid;gap:2px}
+.order li::before{content:"Match " counter(s);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.order li b{font-family:var(--f-display);font-size:22px;font-weight:800;text-transform:uppercase}
+.order li small{color:var(--muted);font-size:13px}
+.code{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;counter-reset:c;padding:0;margin:0;list-style:none}
+.code li{counter-increment:c;background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:14px 16px;display:grid;gap:4px}
+.code li::before{content:counter(c);font-family:var(--f-display);font-weight:900;font-size:34px;line-height:1;color:var(--orange)}
+.code li b{font-size:16.5px}
+.code li span{font-size:14.5px;color:var(--muted)}
+.venue{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.venue div{background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:14px 16px}
+.venue h4{margin:0 0 4px;font-size:17px}
+.venue p{margin:0;font-size:14.5px;color:var(--muted)}
+.venue .spec{font-family:var(--f-mono);font-size:12.5px;color:var(--green);display:block;margin-bottom:4px}
+.note{font-size:13px;color:var(--faint);max-width:80ch}
+.form{border:1px solid var(--rule);border-radius:10px;padding:10px 12px;display:grid;gap:8px}
+.form-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
+.form-head b{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.form-head .when{font-size:12.5px;color:var(--faint)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:inherit;font-size:13.5px;font-weight:600;border:1.5px solid var(--rule);background:transparent;color:var(--muted);border-radius:999px;padding:5px 11px;cursor:pointer}
+.chip:hover:not(:disabled){border-color:var(--ink);color:var(--ink)}
+.chip:disabled{cursor:default;opacity:.6}
+.chip:focus-visible,.note-row button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.chip[data-s="good"][aria-pressed="true"]{background:var(--green);border-color:var(--green);color:var(--paper);opacity:1}
+.chip[data-s="little"][aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:var(--paper);opacity:1}
+.chip[data-s="off"][aria-pressed="true"]{background:var(--orange);border-color:var(--orange);color:var(--paper);opacity:1}
+.note-show{margin:0;font-size:14px;font-style:italic;color:var(--ink)}
+.note-row{display:flex;gap:6px}
+.note-row input{flex:1;min-width:0;font:inherit;font-size:14px;color:var(--ink);background:var(--bg);border:1px solid var(--rule);border-radius:8px;padding:6px 9px}
+.note-row button{font:inherit;font-size:13.5px;font-weight:600;color:var(--green);background:transparent;border:1.5px solid var(--green);border-radius:8px;padding:5px 10px;cursor:pointer}
+.card[data-form="good"]{box-shadow:inset 5px 0 0 var(--green),var(--shadow)}
+.card[data-form="little"]{box-shadow:inset 5px 0 0 var(--gold),var(--shadow)}
+.card[data-form="off"]{box-shadow:inset 5px 0 0 var(--orange),var(--shadow)}
+.formboard{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:14px}
+.formboard > span{display:inline-flex;align-items:center;gap:6px;background:var(--paper);border:1px solid var(--rule);border-radius:999px;padding:4px 11px}
+.formboard i{width:10px;height:10px;border-radius:50%;display:inline-block}
+.formboard b{font-variant-numeric:tabular-nums}
+.formboard .lbl{font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:none;border:0;padding:0}
+.toast{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:9px 14px;border-radius:9px;font-size:14px;box-shadow:var(--shadow)}
+@media (max-width:420px){.stats{grid-template-columns:repeat(2,1fr)}.name{font-size:34px}}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+.key{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:14px;color:var(--muted)}
+nav.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;display:flex;gap:8px;flex-wrap:wrap;border-bottom:1px solid var(--rule)}
+nav.tabs a{font-family:var(--f-display);font-weight:800;font-size:20px;text-transform:uppercase;text-decoration:none;color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:5px 14px}
+nav.tabs a small{font-family:var(--f-body);font-weight:600;font-size:12px;color:var(--muted);text-transform:none;margin-left:6px}
+nav.tabs a:hover{border-color:var(--green)}
+nav.tabs a:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.course{display:grid;gap:18px;scroll-margin-top:70px}
+.c-head{display:grid;gap:8px}
+.course h2{font-family:var(--f-display);font-weight:900;font-size:clamp(40px,6vw,60px);line-height:.95;margin:0;text-transform:uppercase}
+.spec{font-family:var(--f-mono);font-size:13px;color:var(--green)}
+.intro{margin:0;max-width:70ch;color:var(--muted)}
+.plan{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}
+.plan div{background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:12px 14px;font-size:14.5px}
+.plan b{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:2px}
+.holes{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.hole{background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:14px 15px;display:grid;gap:8px;align-content:start;scroll-margin-top:70px}
+.hole.blindhole{border-color:var(--blue)}
+.hh{display:flex;gap:12px;align-items:center}
+.no{flex:none;width:46px;height:46px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-family:var(--f-display);font-weight:900;font-size:26px;font-variant-numeric:tabular-nums}
+.hole.blindhole .no{background:var(--blue)}
+.hh h4{margin:0;font-family:var(--f-display);font-weight:800;font-size:24px;line-height:1;text-transform:uppercase}
+.meta{font-family:var(--f-mono);font-size:12.5px;color:var(--muted);margin-top:3px}
+.tags{display:flex;flex-wrap:wrap;gap:5px}
+.tag{font-size:12.5px;font-weight:700;border-radius:6px;padding:2px 8px;background:var(--gold-2);color:var(--gold)}
+.t-blind{background:var(--blue-2);color:var(--blue)}
+.t-ob{background:var(--red-2);color:var(--red)}
+.t-water{background:var(--blue-2);color:var(--blue);border:1px dashed var(--blue)}
+.row{margin:0;display:grid;grid-template-columns:56px 1fr;gap:8px;font-size:15px}
+.k{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;padding-top:3px}
+.k-aim{color:var(--green)}
+.k-avoid{color:var(--red)}
+.hnote{margin:0;font-size:14.5px;color:var(--muted)}
+.check{margin:0;font-size:13px;color:var(--orange);font-style:italic}
+.gap-note{background:var(--orange-2);border-radius:12px;padding:12px 14px;font-size:15px;max-width:80ch}
+.gap-note b{color:var(--orange)}
+.src{font-size:13px;color:var(--faint);max-width:90ch}
+.src a{color:var(--muted)}
+@media (max-width:420px){nav.tabs a{font-size:17px;padding:4px 10px}nav.tabs a small{display:none}}
+
+
+[hidden]{display:none!important}
+.kit{display:grid;grid-template-columns:repeat(auto-fill,minmax(max(220px,22%),1fr));gap:12px}
+.day{background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:14px 16px;display:grid;gap:10px;align-content:start}
+.day h3{margin:0;font-family:var(--f-display);font-weight:800;font-size:24px;text-transform:uppercase;line-height:1}
+.day .when{font-size:13px;color:var(--muted)}
+.wear{display:grid;gap:6px}
+.wear div{display:flex;align-items:center;gap:10px;font-size:15px}
+.sw{width:26px;height:26px;border-radius:7px;border:1px solid var(--rule);flex:none}
+.wear small{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.08em;min-width:64px}
+.status{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-radius:6px;padding:2px 8px;width:fit-content}
+.status.prop{background:var(--gold-2);color:var(--gold)}
+.status.set{background:var(--green-2);color:var(--green)}
+.status.tbc{background:var(--bg);color:var(--muted);border:1px dashed var(--faint)}
+.events{display:grid;grid-template-columns:repeat(auto-fill,minmax(max(290px,40%),1fr));gap:14px;align-items:start}
+.ev{background:var(--paper);border:1px solid var(--rule);border-radius:14px;padding:18px;display:grid;gap:10px;align-content:start}
+.ev.first{border:2px solid var(--green)}
+.ev.ph{background:transparent;border-style:dashed}
+.ev h3{margin:0;font-family:var(--f-display);font-weight:900;font-size:32px;line-height:.95;text-transform:uppercase}
+.ev .where{font-family:var(--f-mono);font-size:12.5px;color:var(--green)}
+.ev dl{margin:0;display:grid;grid-template-columns:70px 1fr;gap:4px 10px;font-size:15px}
+.ev dt{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.ev dd{margin:0}
+.ev ol{margin:0;padding-left:20px;display:grid;gap:4px;font-size:15px}
+.ev p{margin:0;font-size:14.5px;color:var(--muted)}
+.ev a{font-weight:600}
+.switch{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);display:flex;gap:6px;padding-block:10px;border-bottom:1px solid var(--rule);max-width:1120px;margin:0 auto}
+.switch a{font-family:var(--f-display);font-weight:800;font-size:18px;text-transform:uppercase;text-decoration:none;color:var(--muted);border-radius:8px;padding:5px 14px;border:1.5px solid var(--rule);background:var(--paper)}
+.crest{display:flex!important;align-items:center;gap:8px;border:0!important;background:transparent!important;padding:0 8px 0 0!important;margin-right:auto;color:var(--ink)!important;font-size:18px!important}
+.crest b{color:var(--green)}
+.switch .sm{display:none}
+@media (max-width:520px){.switch .lg{display:none}.switch .sm{display:inline}}
+@media (max-width:520px){.crest span{display:none}.switch{gap:4px}.switch a:not(.crest){font-size:14px;padding:4px 7px}}
+.switch{align-items:center;flex-wrap:wrap}
+.switch a[aria-current="page"]{background:var(--green);border-color:var(--green);color:var(--paper)}
+.switch a:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+#courses nav.tabs{top:calc(env(safe-area-inset-top,0px) + 56px)}
+#courses .course,#courses .hole{scroll-margin-top:120px}
+</style>
+
+<nav class="switch" aria-label="Site"><a href="#team" class="crest" aria-label="ST27 Irish Team home"><svg viewBox="0 0 40 46" width="34" height="39" aria-hidden="true"><path d="M20 1 L38 7 V22 C38 34 30 41 20 45 C10 41 2 34 2 22 V7 Z" fill="var(--green)" stroke="var(--ink)" stroke-width="1.5"/><path d="M8 11 H32 V15 H8 Z" fill="#FFFFFF"/><path d="M8 17 H32 V21 H8 Z" fill="#E0782A"/><text x="20" y="34" text-anchor="middle" font-family="Big Shoulders Display, Arial Narrow, Impact, sans-serif" font-weight="900" font-size="13" fill="#FFFFFF">ST27</text></svg><span>ST27 <b>Irish Team</b></span></a><a href="#team" id="sw-team" aria-current="page">Team</a><a href="#courses" id="sw-courses"><span class="lg">Course notes</span><span class="sm">Courses</span></a><a href="#events" id="sw-events"><span class="lg">Team events</span><span class="sm">Events</span></a></nav>
+<div class="wrap" id="team">
+  <header class="hero">
+    <div class="eyebrow">Squires' Trophy 2027 · Ryder Cup · Isle of Arran</div>
+    <h1>Team <span class="g">Ireland</span></h1>
+    <p class="lede">Seven players, two matchplay champions, thirteen daily majors and 59 Ryder Cup matches of experience between us. Scotland lead the series 7–5. This is the team that squares it.</p>
+    <div class="tally">
+      <div><b>13</b><small>Daily majors won</small></div>
+      <div><b>4</b><small>Salver titles</small></div>
+      <div><b>2</b><small>Seniors titles</small></div>
+      <div><b>59</b><small>Ryder matches played</small></div>
+      <div><b>24</b><small>Ryder wins</small></div>
+    </div>
+    <div class="formboard" aria-live="polite">
+      <span class="lbl">Team form</span>
+      <span><i style="background:var(--green)"></i>Playing well <b id="fb-good">0</b></span>
+      <span><i style="background:var(--gold)"></i>Not playing much <b id="fb-little">0</b></span>
+      <span><i style="background:var(--orange)"></i>Game's off <b id="fb-off">0</b></span>
+      <span><i style="background:var(--rule)"></i>Not in yet <b id="fb-none">7</b></span>
+    </div>
+    <nav class="jump" aria-label="Jump to a player">
+      <a href="#pb">Boycey</a><a href="#baz">Baz</a><a href="#stee">Stee</a><a href="#boothy">Boothy</a><a href="#pricey">Pricey</a><a href="#carlo">Carlo</a><a href="#kev">Kev</a><a href="#combos">Pairings</a><a href="#code">Team code</a><a href="#colours">Colours</a><a href="#courses">Course notes</a><a href="#events">Team events</a>
+    </nav>
+  </header>
+
+  <section aria-labelledby="h-team">
+    <h2 id="h-team">The Team</h2>
+    <p class="sec-intro">Profiles built from the Squires' record books: majors, Ryder Cup matches and recent finishes. Every player has a job on and off the course. Update your own form check through the year so the captain knows who's flying.</p>
+    <div class="roster">
+
+      <article class="card" id="pb">
+        <div class="card-top"><div><h3 class="name">Boycey</h3><div class="aka">PB · Paul Boyce</div></div><div class="hcp"><b>21</b><small>Handicap</small></div></div>
+        <span class="role cap">Captain</span>
+        <p class="role-desc">Picks the pairings, sets the tone on the first tee and keeps the whole team pulling the same way.</p>
+        <p class="strength">A streak player with two majors to prove it. When it clicks he makes pars and birdies with shots in hand, which is exactly what wins holes in better-ball fourballs.</p>
+        <div class="stats">
+          <div class="stat"><b>2</b><small>Majors won</small></div>
+          <div class="stat"><b>38</b><small>Pts, Carnoustie Burnside major</small></div>
+          <div class="stat"><b>50%</b><small>Ryder win rate, 3 from 6</small></div>
+        </div>
+        <ul class="honours">
+          <li>Major: Carnoustie Burnside 2019, 38 points, won by one</li>
+          <li>Major: Ballyliffin Glashedy 2026, a current major winner</li>
+          <li>8th at Ballyliffin 2026 on 61 points, with 26 in round 2</li>
+          <li>Three Ryder Cup wins from six matches</li>
+        </ul>
+        <div class="form" data-player="pb">
+          <div class="form-head"><b>Form check · how's Boycey's game?</b><span class="when">Not checked in yet</span></div>
+          <div class="chips" role="group" aria-label="Boycey's form">
+            <button class="chip" type="button" data-s="good" aria-pressed="false" disabled>Playing well</button>
+            <button class="chip" type="button" data-s="little" aria-pressed="false" disabled>Not playing much</button>
+            <button class="chip" type="button" data-s="off" aria-pressed="false" disabled>Game's off</button>
+          </div>
+          <p class="note-show" hidden></p>
+          <div class="note-row"><input type="text" maxlength="80" placeholder="Add a line, e.g. 3 rounds this month" aria-label="Boycey's form note" disabled><button type="button" disabled>Save</button></div>
+        </div>
+        <p class="best"><b>Best format:</b> fourball better-ball with a steady low-handicap partner.</p>
+      </article>
+
+      <article class="card" id="baz">
+        <div class="card-top"><div><h3 class="name">Baz</h3><div class="aka">Barry</div></div><div class="hcp"><b>7</b><small>Handicap</small></div></div>
+        <span class="role vc">Vice Captain · The Closer</span>
+        <p class="role-desc">Captain's right hand. Anchors the singles and settles the tight matches coming down 16, 17 and 18.</p>
+        <p class="strength">The best matchplay golfer in the side. Three Squires' Salver titles and a habit of finishing strong.</p>
+        <div class="stats">
+          <div class="stat"><b>3</b><small>Salver titles</small></div>
+          <div class="stat"><b>38</b><small>Pts, Machrihanish Dunes major</small></div>
+          <div class="stat"><b>3</b><small>Majors, latest in 2026</small></div>
+        </div>
+        <ul class="honours">
+          <li>Squires' Salver matchplay champion (three wins, 2019–2022)</li>
+          <li>Majors: Ballyliffin Glashedy 2021, Machrihanish Dunes 2022, Ballyliffin Old 2026</li>
+          <li>Top of the ST22 leaderboard on 95 points</li>
+          <li>5th at Ballyliffin 2026, taking the final-day major with 29 points</li>
+        </ul>
+        <div class="form" data-player="baz">
+          <div class="form-head"><b>Form check · how's Baz's game?</b><span class="when">Not checked in yet</span></div>
+          <div class="chips" role="group" aria-label="Baz's form">
+            <button class="chip" type="button" data-s="good" aria-pressed="false" disabled>Playing well</button>
+            <button class="chip" type="button" data-s="little" aria-pressed="false" disabled>Not playing much</button>
+            <button class="chip" type="button" data-s="off" aria-pressed="false" disabled>Game's off</button>
+          </div>
+          <p class="note-show" hidden></p>
+          <div class="note-row"><input type="text" maxlength="80" placeholder="Add a line, e.g. 3 rounds this month" aria-label="Baz's form note" disabled><button type="button" disabled>Save</button></div>
+        </div>
+        <p class="best"><b>Best format:</b> singles anchor and fourballs.</p>
+      </article>
+
+      <article class="card" id="stee">
+        <div class="card-top"><div><h3 class="name">Stee</h3><div class="aka">Ryder Cup veteran</div></div><div class="hcp"><b>8</b><small>Handicap</small></div></div>
+        <span class="role vc">Vice Captain · Strategy &amp; Course</span>
+        <p class="role-desc">Former Ryder captain (ST22). Leads the course plan: target lines, club choices and where the Squires' Drop is worth it.</p>
+        <p class="strength">Joint most experienced Irish Ryder player, with the joint-most wins. Owns the third-best major round in Squires' history.</p>
+        <div class="stats">
+          <div class="stat"><b>11</b><small>Ryder matches</small></div>
+          <div class="stat"><b>5</b><small>Ryder wins, joint Irish best</small></div>
+          <div class="stat"><b>41</b><small>Pts at Lahinch Old, 2014</small></div>
+        </div>
+        <ul class="honours">
+          <li>Majors: Lahinch Old 2014, Dundonald 2017, Machrihanish Dunes 2022</li>
+          <li>Squires' Shard (Eclectic) winner 2025</li>
+          <li>3rd at ST23 on 100 points; 4th at ST24</li>
+          <li>Squires' Salver finalist 2025</li>
+        </ul>
+        <div class="form" data-player="stee">
+          <div class="form-head"><b>Form check · how's Stee's game?</b><span class="when">Not checked in yet</span></div>
+          <div class="chips" role="group" aria-label="Stee's form">
+            <button class="chip" type="button" data-s="good" aria-pressed="false" disabled>Playing well</button>
+            <button class="chip" type="button" data-s="little" aria-pressed="false" disabled>Not playing much</button>
+            <button class="chip" type="button" data-s="off" aria-pressed="false" disabled>Game's off</button>
+          </div>
+          <p class="note-show" hidden></p>
+          <div class="note-row"><input type="text" maxlength="80" placeholder="Add a line, e.g. 3 rounds this month" aria-label="Stee's form note" disabled><button type="button" disabled>Save</button></div>
+        </div>
+        <p class="best"><b>Best format:</b> foursomes and mentoring a partner in fourballs.</p>
+      </article>
+
+      <article class="card" id="boothy">
+        <div class="card-top"><div><h3 class="name">Boothy</h3><div class="aka">In-form</div></div><div class="hcp"><b>10</b><small>Handicap</small></div></div>
+        <span class="role">Form Guide &amp; Scoreboard</span>
+        <p class="role-desc">Keeps the live scoreboard and the stats, and tells the captain who's hot each morning.</p>
+        <p class="strength">The team's rising star. A major, a runner-up day and the matchplay title all came in 2025.</p>
+        <div class="stats">
+          <div class="stat"><b>1</b><small>Salver title, 2025</small></div>
+          <div class="stat"><b>32</b><small>Pts, Penha Longa, 2nd</small></div>
+          <div class="stat"><b>31</b><small>Pts at St Patrick's Links</small></div>
+        </div>
+        <ul class="honours">
+          <li>Major: Oitavos Dunes 2025, won by three points</li>
+          <li>Squires' Salver champion 2025, beating Stee 1 up in the final</li>
+          <li>6th at Rosapenna 2024; 7th at ST23 on 95 points</li>
+          <li>24 points in round 2 at Ballyliffin 2026</li>
+        </ul>
+        <div class="form" data-player="boothy">
+          <div class="form-head"><b>Form check · how's Boothy's game?</b><span class="when">Not checked in yet</span></div>
+          <div class="chips" role="group" aria-label="Boothy's form">
+            <button class="chip" type="button" data-s="good" aria-pressed="false" disabled>Playing well</button>
+            <button class="chip" type="button" data-s="little" aria-pressed="false" disabled>Not playing much</button>
+            <button class="chip" type="button" data-s="off" aria-pressed="false" disabled>Game's off</button>
+          </div>
+          <p class="note-show" hidden></p>
+          <div class="note-row"><input type="text" maxlength="80" placeholder="Add a line, e.g. 3 rounds this month" aria-label="Boothy's form note" disabled><button type="button" disabled>Save</button></div>
+        </div>
+        <p class="best"><b>Best format:</b> leading off in singles and partnering in foursomes.</p>
+      </article>
+
+      <article class="card" id="pricey">
+        <div class="card-top"><div><h3 class="name">Pricey</h3><div class="aka">David · Co-founder</div></div><div class="hcp"><b>16</b><small>Handicap</small></div></div>
+        <span class="role">Founder &amp; Keeper of the Flame</span>
+        <p class="role-desc">Gives the pre-Ryder team talk, presents the team kit and tells the Squires' story at the team dinner.</p>
+        <p class="strength">Helped start the Squires in 2004 and still contends: two Seniors titles and a 39-point major.</p>
+        <div class="stats">
+          <div class="stat"><b>2</b><small>Seniors titles</small></div>
+          <div class="stat"><b>39</b><small>Pts, Machrihanish Old major</small></div>
+          <div class="stat"><b>T2</b><small>Rosapenna, ST24</small></div>
+        </div>
+        <ul class="honours">
+          <li>Co-founder of the Squires, 2004</li>
+          <li>Seniors champion 2022 and 2023</li>
+          <li>Major: Machrihanish Old 2022</li>
+          <li>Eagles Club member: an eagle 2 at Gullane No 2</li>
+          <li>Top of the ST22 leaderboard on 95; T5 at ST23 on 97</li>
+        </ul>
+        <div class="form" data-player="pricey">
+          <div class="form-head"><b>Form check · how's Pricey's game?</b><span class="when">Not checked in yet</span></div>
+          <div class="chips" role="group" aria-label="Pricey's form">
+            <button class="chip" type="button" data-s="good" aria-pressed="false" disabled>Playing well</button>
+            <button class="chip" type="button" data-s="little" aria-pressed="false" disabled>Not playing much</button>
+            <button class="chip" type="button" data-s="off" aria-pressed="false" disabled>Game's off</button>
+          </div>
+          <p class="note-show" hidden></p>
+          <div class="note-row"><input type="text" maxlength="80" placeholder="Add a line, e.g. 3 rounds this month" aria-label="Pricey's form note" disabled><button type="button" disabled>Save</button></div>
+        </div>
+        <p class="best"><b>Best format:</b> foursomes with a steady partner.</p>
+      </article>
+
+      <article class="card" id="carlo">
+        <div class="card-top"><div><h3 class="name">Carlo</h3><div class="aka">Carl</div></div><div class="hcp"><b>21</b><small>Handicap</small></div></div>
+        <span class="role">Social Secretary &amp; Kit Master</span>
+        <p class="role-desc">Sorts the team kit and runs the team's big night out after the Ryder Cup.</p>
+        <p class="strength">A proven major winner who took the Old Tom Morris day at Rosapenna in tough conditions. His handicap is now 21, and those extra shots are a weapon in matchplay.</p>
+        <div class="stats">
+          <div class="stat"><b>26</b><small>Pts, Old Tom major, 2024</small></div>
+          <div class="stat"><b>9</b><small>Ryder matches</small></div>
+          <div class="stat"><b>3</b><small>Rounds improving, ST26</small></div>
+        </div>
+        <ul class="honours">
+          <li>Major: Rosapenna Old Tom Morris 2024, joint-best round of the day</li>
+          <li>Seniors runner-up 2023</li>
+          <li>Improved every round at Ballyliffin 2026: 12, 16, then 18</li>
+          <li>Three Ryder Cup wins for Ireland</li>
+        </ul>
+        <div class="form" data-player="carlo">
+          <div class="form-head"><b>Form check · how's Carlo's game?</b><span class="when">Not checked in yet</span></div>
+          <div class="chips" role="group" aria-label="Carlo's form">
+            <button class="chip" type="button" data-s="good" aria-pressed="false" disabled>Playing well</button>
+            <button class="chip" type="button" data-s="little" aria-pressed="false" disabled>Not playing much</button>
+            <button class="chip" type="button" data-s="off" aria-pressed="false" disabled>Game's off</button>
+          </div>
+          <p class="note-show" hidden></p>
+          <div class="note-row"><input type="text" maxlength="80" placeholder="Add a line, e.g. 3 rounds this month" aria-label="Carlo's form note" disabled><button type="button" disabled>Save</button></div>
+        </div>
+        <p class="best"><b>Best format:</b> fourballs with a low-handicap partner, using his shots.</p>
+      </article>
+
+
+      <article class="card" id="kev">
+        <div class="card-top"><div><h3 class="name">Kev</h3><div class="aka">Kevski · Kevin</div></div><div class="hcp"><b>18</b><small>Handicap</small></div></div>
+        <span class="role">Chief Scout</span>
+        <p class="role-desc">Studies the Scottish team: their form, their handicaps and how they like to pair up. Briefs the captain before every session.</p>
+        <p class="strength">A two-time major winner and one of our most experienced Ryder players, with five wins for Ireland. Finishes strong: his best round at Ballyliffin came on the last day.</p>
+        <div class="stats">
+          <div class="stat"><b>11</b><small>Ryder matches</small></div>
+          <div class="stat"><b>5</b><small>Ryder wins, joint Irish best</small></div>
+          <div class="stat"><b>37</b><small>Pts, Kilspindie major, 2023</small></div>
+        </div>
+        <ul class="honours">
+          <li>Majors: Rosapenna Old Tom Morris 2013, Kilspindie 2023</li>
+          <li>T5 at ST23 on 97 points; 7th at Rosapenna 2024</li>
+          <li>9th at Ballyliffin 2026, closing with 28 points</li>
+        </ul>
+        <div class="form" data-player="kev">
+          <div class="form-head"><b>Form check · how's Kev's game?</b><span class="when">Not checked in yet</span></div>
+          <div class="chips" role="group" aria-label="Kev's form">
+            <button class="chip" type="button" data-s="good" aria-pressed="false" disabled>Playing well</button>
+            <button class="chip" type="button" data-s="little" aria-pressed="false" disabled>Not playing much</button>
+            <button class="chip" type="button" data-s="off" aria-pressed="false" disabled>Game's off</button>
+          </div>
+          <p class="note-show" hidden></p>
+          <div class="note-row"><input type="text" maxlength="80" placeholder="Add a line, e.g. 3 rounds this month" aria-label="Kev's form note" disabled><button type="button" disabled>Save</button></div>
+        </div>
+        <p class="best"><b>Best format:</b> fourballs, and a strong finisher in singles.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="combos" aria-labelledby="h-combos">
+    <h2 id="h-combos">Pairings for discussion</h2>
+    <p class="sec-intro">Nothing is set yet. Each option mixes experience, form and shots in a different way. Tap "Discuss this" to comment on any option.</p>
+    <div class="combos">
+      <p class="hint" style="margin:0;color:var(--muted)">With seven of us, one player rests each team session. Simple rule: nobody sits out twice, and everyone plays singles.</p>
+      <div class="combo-group">
+        <h3>Fourballs (better ball)</h3>
+        <p class="hint">A bad hole costs nothing in this format, so it's where our higher handicaps and streak players do the damage.</p>
+        <div class="options">
+          <div class="opt" data-comment-target>
+            <div class="opt-head"><b>Option A</b><span>Low + high</span></div>
+            <ul class="pairs">
+              <li>Baz <span class="plus">+</span> Boycey <span class="tag">7 + 21</span></li>
+              <li>Stee <span class="plus">+</span> Carlo <span class="tag">8 + 21</span></li>
+              <li>Boothy <span class="plus">+</span> Kev <span class="tag">10 + 18</span></li>
+              <li><span class="tag">Rests: Pricey</span></li>
+            </ul>
+            <p class="why">Every pair has one steady low handicap and one player with shots. Pricey comes in fresh for foursomes.</p>
+            <button class="discuss" type="button">Discuss this</button>
+          </div>
+          <div class="opt" data-comment-target>
+            <div class="opt-head"><b>Option B</b><span>Major winners</span></div>
+            <ul class="pairs">
+              <li>Kev <span class="plus">+</span> Boycey <span class="tag">Four majors between them</span></li>
+              <li>Baz <span class="plus">+</span> Carlo <span class="tag">7 + 21</span></li>
+              <li>Stee <span class="plus">+</span> Pricey <span class="tag">Four majors, co-founder</span></li>
+              <li><span class="tag">Rests: Boothy</span></li>
+            </ul>
+            <p class="why">Every pair has won majors. Boothy rests here and leads the foursomes.</p>
+            <button class="discuss" type="button">Discuss this</button>
+          </div>
+          <div class="opt" data-comment-target>
+            <div class="opt-head"><b>Option C</b><span>Champions together</span></div>
+            <ul class="pairs">
+              <li>Baz <span class="plus">+</span> Boothy <span class="tag">Salver champions</span></li>
+              <li>Stee <span class="plus">+</span> Boycey <span class="tag">Strategist + captain</span></li>
+              <li>Kev <span class="plus">+</span> Carlo <span class="tag">39 shots between them</span></li>
+              <li><span class="tag">Rests: Pricey</span></li>
+            </ul>
+            <p class="why">Stacks our two matchplay champions in one pair and gives the third pair a big handicap cushion.</p>
+            <button class="discuss" type="button">Discuss this</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="combo-group">
+        <h3>Foursomes (alternate shot)</h3>
+        <p class="hint">Steadiness wins here. Partners who hit fairways and trust each other's game.</p>
+        <div class="options">
+          <div class="opt" data-comment-target>
+            <div class="opt-head"><b>Option D</b><span>Steady heads</span></div>
+            <ul class="pairs">
+              <li>Stee <span class="plus">+</span> Pricey <span class="tag">Big-match experience</span></li>
+              <li>Baz <span class="plus">+</span> Boothy <span class="tag">Matchplay kings</span></li>
+              <li>Kev <span class="plus">+</span> Carlo <span class="tag">Play it on shots</span></li>
+              <li><span class="tag">Rests: Boycey, walks every match</span></li>
+            </ul>
+            <p class="why">The captain sits this one out and walks the course, backing every pair.</p>
+            <button class="discuss" type="button">Discuss this</button>
+          </div>
+          <div class="opt" data-comment-target>
+            <div class="opt-head"><b>Option E</b><span>Rotate one in</span></div>
+            <ul class="pairs">
+              <li>Baz <span class="plus">+</span> Boycey</li>
+              <li>Boothy <span class="plus">+</span> Kev</li>
+              <li>Stee <span class="plus">+</span> Pricey</li>
+              <li><span class="tag">Rests: Carlo</span></li>
+            </ul>
+            <p class="why">Keeps two fourball pairs together and brings the rested player straight in. Carlo comes back fresh for singles.</p>
+            <button class="discuss" type="button">Discuss this</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="combo-group">
+        <h3>Singles order</h3>
+        <div class="singles opt" data-comment-target>
+          <ol class="order">
+            <li><b>Boothy</b><small>Form player sets the tempo</small></li>
+            <li><b>Kev</b><small>Major winner keeps it rolling</small></li>
+            <li><b>Pricey</b><small>Experience in match 3</small></li>
+            <li><b>Boycey</b><small>Captain in the engine room</small></li>
+            <li><b>Carlo</b><small>Shots in hand</small></li>
+            <li><b>Stee</b><small>Big-match experience</small></li>
+            <li><b>Baz</b><small>The Closer</small></li>
+          </ol>
+          <p class="why">Start with momentum, finish with our matchplay champion. Swap order depending on who's hot after day two.</p>
+          <button class="discuss" type="button">Discuss this</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="code" aria-labelledby="h-code">
+    <h2 id="h-code">The Team Code</h2>
+    <p class="sec-intro">A happy team is a winning team. Seven promises we make to each other.</p>
+    <ol class="code">
+      <li><b>Every half point is celebrated</b><span>Halves win Ryder Cups. We cheer them like wins.</span></li>
+      <li><b>Nobody walks off alone</b><span>After a lost match, a teammate is waiting on the 18th.</span></li>
+      <li><b>No blame, ever</b><span>Bad holes happen. We move on to the next tee together.</span></li>
+      <li><b>Back your partner</b><span>Whoever we're paired with, trust builds hole by hole.</span></li>
+      <li><b>Duty nights and our night</b><span>Early dinners on playing nights. The big night comes after the Ryder, and it's a good one.</span></li>
+      <li><b>Know the course</b><span>We walk or study Shiskine's blind shots together before we play it.</span></li>
+      <li><b>Green on the first tee</b><span>Team kit on, team photo, then we go.</span></li>
+    </ol>
+  </section>
+
+
+  <section id="colours" aria-labelledby="h-colours">
+    <h2 id="h-colours">What we wear</h2>
+    <p class="sec-intro">One team, one look each day. These are proposals for now; Carlo, as Kit Master, will confirm them with the team.</p>
+    <div class="kit">
+      <div class="day">
+        <span class="status prop">Proposed</span>
+        <h3>Day 1</h3><span class="when">Round 1</span>
+        <div class="wear">
+          <div><small>Top</small><span class="sw" style="background:#0E6B4C"></span>Irish green polo</div>
+          <div><small>Bottoms</small><span class="sw" style="background:#1B2A41"></span>Navy trousers</div>
+        </div>
+      </div>
+      <div class="day">
+        <span class="status prop">Proposed</span>
+        <h3>Day 2</h3><span class="when">Round 2</span>
+        <div class="wear">
+          <div><small>Top</small><span class="sw" style="background:#FFFFFF"></span>White polo</div>
+          <div><small>Bottoms</small><span class="sw" style="background:#6B7075"></span>Grey trousers</div>
+        </div>
+      </div>
+      <div class="day">
+        <span class="status prop">Proposed</span>
+        <h3>Day 3</h3><span class="when">Final round &amp; Ryder Cup</span>
+        <div class="wear">
+          <div><small>Top</small><span class="sw" style="background:#E0782A"></span>Orange polo</div>
+          <div><small>Bottoms</small><span class="sw" style="background:#1B2A41"></span>Navy trousers</div>
+        </div>
+      </div>
+      <div class="day">
+        <span class="status prop">Proposed</span>
+        <h3>Team dinner</h3><span class="when">After the Ryder Cup</span>
+        <div class="wear">
+          <div><small>Top</small><span class="sw" style="background:#0E6B4C"></span>Team green quarter-zip or shirt</div>
+          <div><small>Bottoms</small><span class="sw" style="background:#1B2A41"></span>Smart trousers</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-arran">
+    <h2 id="h-arran">Arran 2027</h2>
+    <p class="sec-intro">Venue details to be confirmed. The island's likely courses suit a team with shots.</p>
+    <div class="venue">
+      <div><span class="spec">12 holes · links</span><h4>Shiskine</h4><p>Blackwaterfoot's famous 12-holer with blind shots and cliff-top greens. Local knowledge matters more than length.</p></div>
+      <div><span class="spec">18 holes · par 62</span><h4>Brodick</h4><p>Short parkland under Goatfell with fast, true greens. Accuracy beats distance.</p></div>
+      <div><span class="spec">18 holes · par 64</span><h4>Lamlash</h4><p>Heathland above the bay facing Holy Isle. The upper holes play into the wind.</p></div>
+    </div>
+  </section>
+
+  <p class="note">Stats from the Squires' Trophy site: records, Ryder Cup page, year results and the ST26 scoreboard. Handicaps as of ST26. Nothing here is final. Pairings and roles are for team discussion.</p>
+</div>
+<div class="wrap" id="courses" hidden>
+  <header class="hero">
+    <div class="eyebrow">Team Ireland · Squires' Trophy 2027 · Isle of Arran</div>
+    <h1>Arran <span class="g">Course Notes</span></h1>
+    <p class="lede">Hole by hole: where to aim, where not to go, and every blind shot. Read it the night before, keep it on your phone on the course. If you spot something on a practice round, tap "Add local knowledge" on that hole.</p>
+    <div class="key"><span class="tag t-blind">Blind shot</span><span class="tag t-ob">Out of bounds</span><span class="tag t-water">Water / burn</span><span class="tag">Other hazard</span><span>Blue-numbered holes have a blind shot.</span></div>
+  </header>
+
+  <nav class="tabs" aria-label="Courses">
+    <a href="#shiskine">Shiskine<small>12 holes · par 42</small></a>
+    <a href="#lamlash">Lamlash<small>par 64</small></a>
+    <a href="#brodick">Brodick<small>par 65</small></a>
+  </nav>
+
+  <section class="course" id="shiskine" aria-labelledby="h-sh">
+    <div class="c-head">
+      <span class="spec">12 holes · par 42 · 2,687 yds (visitor tees) · Blackwaterfoot</span>
+      <h2 id="h-sh">Shiskine</h2>
+      <p class="intro">Clifftop links with seven par 3s and a string of blind shots. Local knowledge beats length here, so walk it or read this first.</p>
+    </div>
+    <div class="plan">
+      <div><b>Tees</b>Visitors play the yellow tees. Visitors always play 12, never 18. A second loop is a separate booking.</div>
+      <div><b>Signals</b>On blind holes, use the lever, pulley or bell at the green once you're clear so the group behind can play (confirmed on the 7th).</div>
+      <div><b>Yardage discs</b>Red 100 · yellow 150 · white 200, measured to the middle of the green.</div>
+      <div><b>Burns</b>Two burns are in play on the 2nd, 7th and 9th. Short on 2, long on 7, lay up on 9.</div>
+    </div>
+    <div class="holes">
+<article class="hole blindhole" id="shiskine-1" data-comment-target>
+<div class="hh"><span class="no">1</span><div><h4>Road Hole</h4><div class="meta">Par 4 · 368 yds · SI 5</div></div></div>
+<div class="tags"><span class="tag t-ob">OB left</span><span class="tag t-blind">Blind approach</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Middle to right of the fairway off the tee.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Anything left: OB fence, then the road and the beach. Don&#x27;t go through the back.</span></p><p class="hnote">Hook here and you&#x27;re on the sand.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole blindhole" id="shiskine-2" data-comment-target>
+<div class="hh"><span class="no">2</span><div><h4>Twa&#x27; Burns</h4><div class="meta">Par 4 · 357 yds · SI 1</div></div></div>
+<div class="tags"><span class="tag t-hazard">Fairway bunker ~220</span><span class="tag t-ob">OB right</span><span class="tag t-water">Burn short of green</span><span class="tag t-blind">Blind approach</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Lay up short of the centre-line bunker, leaving about 130 in.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Short on the approach: the burn sits just in front of the green. OB all down the right.</span></p><p class="hnote">Hardest hole on the course. A bogey is no disaster.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole blindhole" id="shiskine-3" data-comment-target>
+<div class="hh"><span class="no">3</span><div><h4>Crow&#x27;s Nest</h4><div class="meta">Par 3 · 122 yds · SI 9</div></div></div>
+<div class="tags"><span class="tag t-blind">Blind tee shot</span><span class="tag t-hazard">Cliff-top green</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>The black-and-white marker post. Take plenty of club: the green sits 30–50 ft up the cliff.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Left of the post. Anything left is gone.</span></p><p class="hnote">The signature hole. Miss right if you must; you&#x27;ll have a tricky downhill chip. Green slopes right to left.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole blindhole" id="shiskine-4" data-comment-target>
+<div class="hh"><span class="no">4</span><div><h4>The Shelf</h4><div class="meta">Par 3 · 137 yds · SI 11</div></div></div>
+<div class="tags"><span class="tag t-hazard">Cliffs right</span><span class="tag t-blind">May be blind to a pole</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Centre of the green. Plenty of room and a fairly flat surface.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Right, towards the cliffs.</span></p><p class="hnote">Elevated tee down towards Kilbrannan Sound. Wind swirls round Drumadoon, so throw some grass before choosing a club. A birdie chance.</p><p class="check">Check on the day: whether a marker pole is needed here</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="shiskine-5" data-comment-target>
+<div class="hh"><span class="no">5</span><div><h4>The Point</h4><div class="meta">Par 3 · 212 yds · SI 7</div></div></div>
+<div class="tags"><span class="tag t-hazard">Carry over heather</span><span class="tag t-hazard">Green falls away</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Front half of the green. Usually crosswind or into the wind, so driver or rescue is fine.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Long. Getting up and down from behind is almost impossible.</span></p><p class="hnote">The longest par 3 on the course.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole blindhole" id="shiskine-6" data-comment-target>
+<div class="hh"><span class="no">6</span><div><h4>Shore Hole</h4><div class="meta">Par 4 · 266 yds · SI 3</div></div></div>
+<div class="tags"><span class="tag t-ob">OB right: beach</span><span class="tag t-blind">Blind green</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Left-centre with a club you trust, rather than a driver at the green.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Right: OB and the beach all the way. Trouble left too.</span></p><p class="hnote">Driveable, but only if you&#x27;re hitting it straight. Birdie or even eagle if it comes off.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole blindhole" id="shiskine-7" data-comment-target>
+<div class="hh"><span class="no">7</span><div><h4>Himalayas</h4><div class="meta">Par 3 · 162 yds · SI 10</div></div></div>
+<div class="tags"><span class="tag t-blind">Blind over a dune</span><span class="tag t-water">Burn behind green</span><span class="tag t-ob">OB right</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Over the dune with a club that won&#x27;t reach the back. More room on the right than it looks.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Long (burn behind) and left (gorse).</span></p><p class="hnote">Pull the signal lever at the green once you&#x27;ve putted out so the group behind can play.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole blindhole" id="shiskine-8" data-comment-target>
+<div class="hh"><span class="no">8</span><div><h4>Hades</h4><div class="meta">Par 4 · 220 yds · SI 6</div></div></div>
+<div class="tags"><span class="tag t-hazard">Deep pot bunker front right</span><span class="tag t-blind">Tee shot may be blind</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Right-centre off the tee, then pitch to the left side of the green.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Left off the tee. The pot bunker front right.</span></p><p class="hnote">Probably the easiest hole. A par here is a must in matchplay.</p><p class="check">Check on the day: whether the tee shot is blind</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="shiskine-9" data-comment-target>
+<div class="hh"><span class="no">9</span><div><h4>Drumadoon</h4><div class="meta">Par 5 · 477 yds · SI 2</div></div></div>
+<div class="tags"><span class="tag t-water">Burn 110–120 short</span><span class="tag t-hazard">Gorse right</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Open the shoulders: the fairway is wide. Then lay up short of the burn.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Right (gorse the whole way). The hollow just over the burn, which leaves a blind third.</span></p><p class="hnote">The only par 5. Green slopes right to left with a false front.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="shiskine-10" data-comment-target>
+<div class="hh"><span class="no">10</span><div><h4>Paradise</h4><div class="meta">Par 3 · 150 yds · SI 12</div></div></div>
+<div class="tags"><span class="tag t-hazard">Three bunkers</span><span class="tag t-hazard">Two greens</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>The left-hand green. Take a club less: it plays downhill.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Long. The green runs hard from back to front and three-putts are common.</span></p><p class="hnote">360° views from the tee. Take a photo, then focus.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole blindhole" id="shiskine-11" data-comment-target>
+<div class="hh"><span class="no">11</span><div><h4>The Hollows</h4><div class="meta">Par 3 · 196 yds · SI 4</div></div></div>
+<div class="tags"><span class="tag t-blind">Totally blind</span><span class="tag t-hazard">Punchbowl green</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>A high, soft shot over the hill into the punchbowl.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Missing the green: the up-and-down from the hollows is tough.</span></p><p class="hnote">Ridge across the middle of the green. Ring the bell once the green is clear.</p><p class="check">Check on the day: the bell</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="shiskine-12" data-comment-target>
+<div class="hh"><span class="no">12</span><div><h4>Kilmory</h4><div class="meta">Par 3 · 120 yds · SI 8</div></div></div>
+<div class="tags"><span class="tag t-hazard">Bunkers left &amp; short right</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Short of the flag. Short is better than long.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Long. Also the left-side bunkers.</span></p><p class="hnote">Into a south wind this can need a mid-iron; in summer it&#x27;s a wedge. The clubhouse is watching.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+    </div>
+  </section>
+
+  <section class="course" id="lamlash" aria-labelledby="h-la">
+    <div class="c-head">
+      <span class="spec">18 holes · par 64 · 4,510 yds white / 3,945 yellow · heathland</span>
+      <h2 id="h-la">Lamlash</h2>
+      <p class="intro">Hilly heathland above Lamlash Bay: 11 par 3s, steep slopes, blind tee shots to marker poles and burns in odd places. It climbs for the first 12 holes and comes back down to finish.</p>
+    </div>
+    <div class="plan">
+      <div><b>Legs</b>Holes 1 to 12 are uphill work. Buggies are worth it for anyone who doesn't fancy the climb.</div>
+      <div><b>Lies</b>Expect uphill and downhill lies all day. Swing within yourself and take an extra club uphill.</div>
+      <div><b>Greens</b>Raised and quick. Short and below the hole is the safe miss on most holes.</div>
+      <div><b>Markers</b>Blind tee shots on 6 and 8, and a carry on 15: aim at the poles and commit.</div>
+    </div>
+    <div class="holes">
+<article class="hole" id="lamlash-1" data-comment-target>
+<div class="hh"><span class="no">1</span><div><h4>Sair Pech</h4><div class="meta">Par 4 · 346 yds · SI 9</div></div></div>
+<div class="tags"><span class="tag t-hazard">Very steep climb</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Club up for the approach: it&#x27;s uphill all the way.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Short on the approach.</span></p><p class="hnote">&#x27;Sair pech&#x27; means a hard climb. Pace yourself; there&#x27;s a long way up.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="lamlash-2" data-comment-target>
+<div class="hh"><span class="no">2</span><div><h4>Babs Well</h4><div class="meta">Par 3 · 184 yds · SI 5</div></div></div>
+<div class="tags"><span class="tag t-ob">OB left</span><span class="tag t-hazard">Bunker right</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Centre, or short-right of the bunker.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Left: OB.</span></p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="lamlash-3" data-comment-target>
+<div class="hh"><span class="no">3</span><div><h4>Goatfell</h4><div class="meta">Par 4 · 387 yds · SI 1</div></div></div>
+<div class="tags"><span class="tag t-hazard">Uneven lies</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Get the drive as far up as you can, onto a flat lie.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>A short drive onto a slope.</span></p><p class="hnote">Longest and hardest hole. Take a bogey and move on.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="lamlash-4" data-comment-target>
+<div class="hh"><span class="no">4</span><div><h4>The Dyke</h4><div class="meta">Par 3 · 174 yds · SI 15</div></div></div>
+<div class="tags"><span class="tag t-hazard">Runs away short &amp; right</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Middle to long-left. A low punch iron is an option.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Short or right: the ball runs off down the hill.</span></p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="lamlash-5" data-comment-target>
+<div class="hh"><span class="no">5</span><div><h4>The Fanks</h4><div class="meta">Par 3 · 201 yds · SI 3</div></div></div>
+
+<p class="row"><b class="k k-aim">Aim</b><span>Middle of the green.</span></p><p class="hnote">The club calls it &#x27;short but very tricky&#x27;.</p><p class="check">Check on the day: hazards and green shape</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole blindhole" id="lamlash-6" data-comment-target>
+<div class="hh"><span class="no">6</span><div><h4>The Echo</h4><div class="meta">Par 4 · 330 yds · SI 7</div></div></div>
+<div class="tags"><span class="tag t-blind">Blind tee shot</span><span class="tag t-hazard">Three-tier green</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>The black-and-white pole off the tee.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>The wrong tier on the approach. Check where the pin is before you play.</span></p><p class="hnote">A good drive leaves a short iron.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="lamlash-7" data-comment-target>
+<div class="hh"><span class="no">7</span><div><h4>Blairmore</h4><div class="meta">Par 4 · 283 yds · SI 13</div></div></div>
+<div class="tags"><span class="tag t-water">Two burns</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Right of the green and let the slope feed it on. Higher handicaps: lay up short of or between the burns.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Hitting into either burn.</span></p><p class="hnote">Driveable for the long hitters.</p><p class="check">Check on the day: exact burn positions</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole blindhole" id="lamlash-8" data-comment-target>
+<div class="hh"><span class="no">8</span><div><h4>The Beeches</h4><div class="meta">Par 4 · 256 yds · SI 17</div></div></div>
+<div class="tags"><span class="tag t-blind">Blind, steep uphill</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Over the marker.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Under-clubbing: it&#x27;s a steep hill.</span></p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="lamlash-9" data-comment-target>
+<div class="hh"><span class="no">9</span><div><h4>Mullaig Mhor</h4><div class="meta">Par 4 · 349 yds · SI 11</div></div></div>
+
+<p class="row"><b class="k k-aim">Aim</b><span>Scorecard only.</span></p><p class="hnote">Glorious view of Holy Isle.</p><p class="check">Check on the day: everything about how it plays</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="lamlash-10" data-comment-target>
+<div class="hh"><span class="no">10</span><div><h4>Ravine</h4><div class="meta">Par 4 · 241 yds · SI 12</div></div></div>
+<div class="tags"><span class="tag t-water">Burn below</span><span class="tag t-hazard">Dogleg left</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Up the hill, with enough club.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Short: the ball rolls back down towards the burn.</span></p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="lamlash-11" data-comment-target>
+<div class="hh"><span class="no">11</span><div><h4>Last Climb</h4><div class="meta">Par 4 · 263 yds · SI 14</div></div></div>
+
+<p class="row"><b class="k k-aim">Aim</b><span>Straight drive up the fairway.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>A careless approach: the club warns you to be careful with the shot to the green.</span></p><p class="hnote">The first hole of &#x27;the triangle&#x27;.</p><p class="check">Check on the day: green hazards</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="lamlash-12" data-comment-target>
+<div class="hh"><span class="no">12</span><div><h4>Lighthouse</h4><div class="meta">Par 3 · 224 yds · SI 2</div></div></div>
+<div class="tags"><span class="tag t-hazard">Long par 3</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Leave the tee shot short, at the bottom of the green, so you chip or putt uphill.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Long, or above the hole.</span></p><p class="hnote">Hardest par 3 on the course. A bogey is fine for most.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="lamlash-13" data-comment-target>
+<div class="hh"><span class="no">13</span><div><h4>The Glebe</h4><div class="meta">Par 3 · 186 yds · SI 16</div></div></div>
+<div class="tags"><span class="tag t-ob">Field left: lost balls</span><span class="tag t-hazard">Downhill</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Centre, with a club less for the drop.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>A hook: many balls are lost in the field on the left.</span></p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="lamlash-14" data-comment-target>
+<div class="hh"><span class="no">14</span><div><h4>Margnaheglish</h4><div class="meta">Par 3 · 210 yds · SI 6</div></div></div>
+<div class="tags"><span class="tag t-hazard">Bunker front right</span><span class="tag t-hazard">Downhill</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Straight down, centre to left-centre.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>The sneaky bunker front right.</span></p><p class="hnote">Holy Isle in view.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="lamlash-15" data-comment-target>
+<div class="hh"><span class="no">15</span><div><h4>The Quarry</h4><div class="meta">Par 4 · 284 yds · SI 8</div></div></div>
+<div class="tags"><span class="tag t-hazard">Carry over road &amp; quarry</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>The marker. Commit to the carry.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Short: the quarry.</span></p><p class="hnote">A pressure tee shot. Play your stock club.</p><p class="check">Check on the day: carry distance</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="lamlash-16" data-comment-target>
+<div class="hh"><span class="no">16</span><div><h4>Wee Dunt</h4><div class="meta">Par 3 · 98 yds · SI 18</div></div></div>
+
+<p class="row"><b class="k k-aim">Aim</b><span>Centre of the green. Short hole, but give it respect.</span></p><p class="hnote">Watch for the 17th tee, hidden to the left.</p><p class="check">Check on the day: bunkers</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="lamlash-17" data-comment-target>
+<div class="hh"><span class="no">17</span><div><h4>Manse Road</h4><div class="meta">Par 3 · 201 yds · SI 4</div></div></div>
+<div class="tags"><span class="tag t-hazard">Over Manse Road</span><span class="tag t-hazard">Lip at front of green</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Over the road, then chip and run onto the green.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Trying to carry it all to a tight flag.</span></p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="lamlash-18" data-comment-target>
+<div class="hh"><span class="no">18</span><div><h4>Twa Burns</h4><div class="meta">Par 4 · 293 yds · SI 10</div></div></div>
+<div class="tags"><span class="tag t-water">Two burns</span><span class="tag t-hazard">Elevated green</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Between the two trees off the tee.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Under-clubbing into the raised green: take one more.</span></p><p class="check">Check on the day: burn positions</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+    </div>
+  </section>
+
+  <section class="course" id="brodick" aria-labelledby="h-br">
+    <div class="c-head">
+      <span class="spec">18 holes · par 65 white / 64 yellow · 4,740 / 4,468 yds · parkland &amp; seaside</span>
+      <h2 id="h-br">Brodick</h2>
+      <p class="intro">Part parkland, part along the shore, with the Rosa Burn in play and views of Goat Fell. Eight par 3s, two of them over the water, and a 220-yard par 3 to finish.</p>
+    </div>
+    <p class="gap-note"><b>Local knowledge wanted.</b> Brodick doesn't publish a hole-by-hole guide, so most holes below show the scorecard only. Whoever plays it first, add what you find on each hole.</p>
+    <div class="plan">
+      <div><b>Tees</b>The 2nd is a par 4 off the whites but a par 3 off the yellows. Agree tees before the match starts.</div>
+      <div><b>Water</b>Two par 3s carry the Rosa Burn, including the 15th by the bridge. Take enough club.</div>
+      <div><b>Trees</b>Tree-lined in places, with a big Scots pine in the middle of the 5th fairway.</div>
+      <div><b>Wind</b>Wind makes a big difference here. Check it on every tee.</div>
+    </div>
+    <div class="holes">
+<article class="hole" id="brodick-1" data-comment-target>
+<div class="hh"><span class="no">1</span><div><h4>Cloy</h4><div class="meta">Par 4 · 398 yds white · 387 yellow · SI 5</div></div></div>
+
+<p class="hnote">Views of Goat Fell.</p><p class="check">Check on the day: hazards</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="brodick-2" data-comment-target>
+<div class="hh"><span class="no">2</span><div><h4>Schoolhouse</h4><div class="meta">Par 4 · 319 yds white · par 3, 192 yellow · SI 15</div></div></div>
+
+<p class="hnote">Par 4 off the whites, par 3 off the yellows. Agree which tees before you start.</p><p class="check">Check on the day: hazards</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="brodick-3" data-comment-target>
+<div class="hh"><span class="no">3</span><div><h4>Fisherman&#x27;s</h4><div class="meta">Par 3 · 163 yds white · 119 yellow · SI 7</div></div></div>
+
+<p class="check">Check on the day: hazards</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="brodick-4" data-comment-target>
+<div class="hh"><span class="no">4</span><div><h4>Rosa</h4><div class="meta">Par 3 · 129 yds white · 125 yellow · SI 17</div></div></div>
+
+<p class="hnote">Named after the Rosa Burn.</p><p class="check">Check on the day: whether the burn is in play</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="brodick-5" data-comment-target>
+<div class="hh"><span class="no">5</span><div><h4>Ben Nuis</h4><div class="meta">Par 5 · 460 yds white · 460 yellow · SI 1</div></div></div>
+<div class="tags"><span class="tag t-hazard">Big Scots pine in fairway</span><span class="tag t-hazard">Tree-lined</span></div>
+<p class="hnote">The only par 5 and the hardest hole. A par is a very good score.</p><p class="check">Check on the day: which side of the pine</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="brodick-6" data-comment-target>
+<div class="hh"><span class="no">6</span><div><h4>Turkey Oak</h4><div class="meta">Par 4 · 272 yds white · 265 yellow · SI 13</div></div></div>
+
+<p class="check">Check on the day: hazards</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="brodick-7" data-comment-target>
+<div class="hh"><span class="no">7</span><div><h4>Shortcut</h4><div class="meta">Par 3 · 160 yds white · 156 yellow · SI 11</div></div></div>
+
+<p class="hnote">Players call it a tricky par 3.</p><p class="check">Check on the day: why it&#x27;s tricky</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="brodick-8" data-comment-target>
+<div class="hh"><span class="no">8</span><div><h4>Firs</h4><div class="meta">Par 3 · 170 yds white · 167 yellow · SI 3</div></div></div>
+
+<p class="hnote">Hardest par 3 by stroke index.</p><p class="check">Check on the day: hazards</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="brodick-9" data-comment-target>
+<div class="hh"><span class="no">9</span><div><h4>Strabane</h4><div class="meta">Par 4 · 379 yds white · 373 yellow · SI 9</div></div></div>
+
+<p class="check">Check on the day: hazards</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="brodick-10" data-comment-target>
+<div class="hh"><span class="no">10</span><div><h4>Boathouse</h4><div class="meta">Par 4 · 398 yds white · 365 yellow · SI 10</div></div></div>
+
+<p class="check">Check on the day: whether the shore is in play</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="brodick-11" data-comment-target>
+<div class="hh"><span class="no">11</span><div><h4>Ormidale</h4><div class="meta">Par 4 · 361 yds white · 356 yellow · SI 2</div></div></div>
+
+<p class="hnote">Looks over the bay to the ferry terminal.</p><p class="check">Check on the day: hazards</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="brodick-12" data-comment-target>
+<div class="hh"><span class="no">12</span><div><h4>Lagoon</h4><div class="meta">Par 4 · 251 yds white · 251 yellow · SI 16</div></div></div>
+
+<p class="check">Check on the day: whether water is in play</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="brodick-13" data-comment-target>
+<div class="hh"><span class="no">13</span><div><h4>Intore</h4><div class="meta">Par 3 · 190 yds white · 185 yellow · SI 6</div></div></div>
+
+<p class="check">Check on the day: possibly the second par 3 over the Rosa Burn</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="brodick-14" data-comment-target>
+<div class="hh"><span class="no">14</span><div><h4>Turf Dyke</h4><div class="meta">Par 3 · 169 yds white · 162 yellow · SI 18</div></div></div>
+
+
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="brodick-15" data-comment-target>
+<div class="hh"><span class="no">15</span><div><h4>Smacks</h4><div class="meta">Par 3 · 126 yds white · 118 yellow · SI 8</div></div></div>
+<div class="tags"><span class="tag t-water">Over the Rosa Burn</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Take enough club to be sure of the carry.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Short: that&#x27;s in the water.</span></p><p class="hnote">Short par 3 over the river by the bridge. The most memorable hole.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="brodick-16" data-comment-target>
+<div class="hh"><span class="no">16</span><div><h4>Bill&#x27;s Wid</h4><div class="meta">Par 4 · 275 yds white · 272 yellow · SI 14</div></div></div>
+
+<p class="check">Check on the day: hazards</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="brodick-17" data-comment-target>
+<div class="hh"><span class="no">17</span><div><h4>Hendry&#x27;s Park</h4><div class="meta">Par 4 · 295 yds white · 295 yellow · SI 4</div></div></div>
+
+<p class="hnote">SI 4 is high for a 295-yard hole, which suggests trouble.</p><p class="check">Check on the day: what makes it hard</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="brodick-18" data-comment-target>
+<div class="hh"><span class="no">18</span><div><h4>Memorial</h4><div class="meta">Par 3 · 225 yds white · 220 yellow · SI 12</div></div></div>
+
+<p class="hnote">A long par 3 to finish at the clubhouse. Driver or fairway wood for most of us.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+    </div>
+  </section>
+
+  <p class="src">Sources: Shiskine club course page, Golfing Pilgrim, Golf by TourMiss, Golf Monthly, Top100, National Club Golfer; Lamlash club hole-by-hole guide, Golftraxx, GolfPass; Brodick club scorecard (Feb 2026), golfonarran.com, GolfPass and Golfshake reviews. Stroke indexes are men's. Venue for ST27 still to be confirmed. Anything marked "check on the day" couldn't be confirmed from a source.</p>
+</div>
+<div class="wrap" id="events" hidden>
+  <header class="hero">
+    <div class="eyebrow">Team Ireland · Squires' Trophy 2027</div>
+    <h1>Team <span class="g">Events</span></h1>
+    <p class="lede">Get-togethers before Arran: play a round in our practice pairings, then sit down and talk tactics, strategy and the course notes. Dates and details go here as they're fixed.</p>
+  </header>
+  <section aria-labelledby="h-ev">
+    <h2 id="h-ev">Coming up</h2>
+    <p class="sec-intro">Tap "Discuss this" on an event to suggest dates or say you're in.</p>
+    <div class="events">
+      <article class="ev first" data-comment-target>
+        <span class="status set">First event · venue picked</span>
+        <h3>St Anne's</h3>
+        <span class="where">Bull Island · Dollymount · Dublin 5 · links</span>
+        <dl>
+          <dt>Date</dt><dd>To be confirmed</dd>
+          <dt>Tee time</dt><dd>To be confirmed</dd>
+          <dt>Players</dt><dd>All seven</dd>
+        </dl>
+        <ol>
+          <li><b>Play:</b> 18 holes in fourballs, trying out the pairing options.</li>
+          <li><b>Talk:</b> clubhouse session on pairings, the singles order and who rests when.</li>
+          <li><b>Plan:</b> walk through the Shiskine blind holes from the course notes.</li>
+          <li><b>Kit:</b> agree the day colours.</li>
+        </ol>
+        <p>A links course by the sea, so it's good practice for Arran's wind and running shots. <a href="https://www.stanneslinksgolf.com/Visitors" target="_blank" rel="noopener">Visitor info</a></p>
+        <button class="discuss" type="button">Discuss this</button>
+      </article>
+      <article class="ev ph" data-comment-target>
+        <span class="status tbc">Placeholder</span>
+        <h3>Dublin</h3>
+        <span class="where">Venue to be decided</span>
+        <dl><dt>Date</dt><dd>To be confirmed</dd></dl>
+        <p>Second Dublin get-together. Ideas welcome.</p>
+        <button class="discuss" type="button">Discuss this</button>
+      </article>
+      <article class="ev ph" data-comment-target>
+        <span class="status tbc">Placeholder</span>
+        <h3>Sligo</h3>
+        <span class="where">Venue to be decided</span>
+        <dl><dt>Date</dt><dd>To be confirmed</dd></dl>
+        <p>A west-coast links weekend. Ideas welcome.</p>
+        <button class="discuss" type="button">Discuss this</button>
+      </article>
+      <article class="ev ph" data-comment-target>
+        <span class="status tbc">Placeholder</span>
+        <h3>Donegal</h3>
+        <span class="where">Venue to be decided</span>
+        <dl><dt>Date</dt><dd>To be confirmed</dd></dl>
+        <p>A final warm-up before Arran. Ideas welcome.</p>
+        <button class="discuss" type="button">Discuss this</button>
+      </article>
+    </div>
+  </section>
+</div>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+(function(){
+  const views={team:document.getElementById('team'),courses:document.getElementById('courses'),events:document.getElementById('events')};
+  const tabs={team:document.getElementById('sw-team'),courses:document.getElementById('sw-courses'),events:document.getElementById('sw-events')};
+  function viewFor(h){
+    if(h==='events') return 'events';
+    if(h==='courses'||/^(shiskine|lamlash|brodick)(-\d+)?$/.test(h)) return 'courses';
+    return 'team';
+  }
+  function show(){
+    const h=(location.hash||'').slice(1), v=viewFor(h);
+    for(const k in views){views[k].hidden=k!==v; if(k===v) tabs[k].setAttribute('aria-current','page'); else tabs[k].removeAttribute('aria-current');}
+    if(!h||h===v) window.scrollTo(0,0); else {const el=document.getElementById(h); if(el) el.scrollIntoView();}
+  }
+  window.addEventListener('hashchange',show); show();
+})();
+</script>
+<script>
+(function(){
+  const toast = document.getElementById('toast');
+  let t;
+  const say = msg => { toast.textContent = msg; toast.hidden = false; clearTimeout(t); t = setTimeout(()=>{ toast.hidden = true; }, 3200); };
+  const buttons = [...document.querySelectorAll('.discuss')];
+  let comments = null, ready = false;
+  if (window.claude && typeof window.claude.use === 'function') {
+    window.claude.use('comments').then(c => { comments = c; ready = true; if (!c) buttons.forEach(b => b.hidden = true); }).catch(()=>{ ready = true; buttons.forEach(b => b.hidden = true); });
+  } else {
+    buttons.forEach(b => b.hidden = true);
+  }
+  buttons.forEach(b => b.addEventListener('click', async () => {
+    const target = b.closest('[data-comment-target]');
+    if (!comments) { say(ready ? 'Commenting is not available in this view.' : 'Comments are still loading. Try again in a moment.'); return; }
+    try {
+      const r = await comments.openComposer({ element: target });
+      if (!r || !r.opened) say('Finish or close the comment you already have open first.');
+    } catch (e) {
+      if (e && (e.code === 'unavailable' || e.code === 'not_granted' || e.code === 'forbidden')) { buttons.forEach(x => x.hidden = true); say('Commenting is off in this view. Use the comment button in the toolbar.'); }
+      else if (e && e.code === 'rate_limited') say('Slow down a little, then try again.');
+      else say('Could not open the comment box. Try again.');
+    }
+  }));
+})();
+
+(function(){
+  const STAT={good:1,little:1,off:1};
+  const forms=[...document.querySelectorAll('.form')];
+  const toast=document.getElementById('toast'); let tt;
+  const say=m=>{toast.textContent=m;toast.hidden=false;clearTimeout(tt);tt=setTimeout(()=>{toast.hidden=true;},3200);};
+  let db=null, state={}, readOnly=false;
+  const queue={};
+  const fmt=iso=>{const d=new Date(iso); return isNaN(d)?'':d.toLocaleDateString('en-IE',{day:'numeric',month:'short',year:'numeric'});};
+  function setEnabled(on){forms.forEach(f=>f.querySelectorAll('button,input').forEach(el=>el.disabled=!on));}
+  function render(){
+    const n={good:0,little:0,off:0,none:0};
+    forms.forEach(f=>{
+      const id=f.dataset.player, d=state[id]||{};
+      const st=STAT[d.status]?d.status:'';
+      n[st||'none']++;
+      f.closest('.card').dataset.form=st;
+      f.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',String(c.dataset.s===st)));
+      const w=d.updatedAt?fmt(d.updatedAt):'';
+      f.querySelector('.when').textContent=(st||d.note)&&w?'Updated '+w:'Not checked in yet';
+      const note=typeof d.note==='string'?d.note.slice(0,80):'';
+      const ns=f.querySelector('.note-show'); ns.textContent=note?'\u201C'+note+'\u201D':''; ns.hidden=!note;
+      const inp=f.querySelector('input'); if(document.activeElement!==inp) inp.value=note;
+    });
+    for(const k in n){const el=document.getElementById('fb-'+k); if(el) el.textContent=n[k];}
+  }
+  function write(id,patch){
+    if(!db||readOnly) return;
+    const cur=state[id]||{};
+    const body={status:STAT[cur.status]?cur.status:null,note:typeof cur.note==='string'?cur.note:'',...patch,updatedAt:new Date().toISOString()};
+    const prev=queue[id]||Promise.resolve();
+    queue[id]=prev.then(()=>db.doc('form/'+id).set(body)).catch(e=>{
+      const c=e&&e.code;
+      if(c==='invalid_argument'||c==='not_granted'||c==='revoked'){readOnly=true;setEnabled(false);say('You can see the form board, but updating it needs edit access to this page.');}
+      else if(c==='resource_exhausted') say('Too many updates at once. Try again in a moment.');
+      else say('Could not save that. Try again.');
+    });
+  }
+  forms.forEach(f=>{
+    const id=f.dataset.player;
+    f.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{
+      if(!db||readOnly) return;
+      if((state[id]||{}).status===c.dataset.s) return;
+      write(id,{status:c.dataset.s});
+    }));
+    const inp=f.querySelector('input'), btn=f.querySelector('.note-row button');
+    const save=()=>{ if(!db||readOnly) return; const v=inp.value.trim().slice(0,80); if(v===((state[id]||{}).note||'')) return; write(id,{note:v}); inp.blur(); say('Note saved.'); };
+    btn.addEventListener('click',save);
+    inp.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();save();}});
+  });
+  if(!(window.claude&&typeof window.claude.use==='function')){forms.forEach(f=>f.querySelector('.when').textContent='Form check works when opened in Claude');return;}
+  window.claude.use('db').then(async d=>{
+    if(!d){forms.forEach(f=>f.querySelector('.when').textContent='Form check isn\u2019t available in this view');return;}
+    db=d;
+    try{const u=await window.claude.use('user'); if(u&&typeof u.can==='function'){const ok=await u.can('data.write'); if(ok===false) readOnly=true;}}catch(_){}
+    setEnabled(!readOnly);
+    db.collection('form').onSnapshot(snap=>{
+      const next={}; snap.docs.forEach(doc=>{ if(doc.exists){ const x=doc.data()||{}; next[doc.id]={status:x.status,note:x.note,updatedAt:x.updatedAt}; }});
+      state=next; render();
+    },e=>{ if(e&&e.code==='revoked'){readOnly=true;setEnabled(false);} });
+  }).catch(()=>{});
+})();
+</script>
+
+</body></html>
