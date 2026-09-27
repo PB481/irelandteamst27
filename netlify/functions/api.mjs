@@ -95,6 +95,14 @@ export default async (req) => {
       return checkCode(req) || json({ ok: true });
     }
 
+    // The WhatsApp invite link is set as WHATSAPP_URL in Netlify and only
+    // handed out with the team passcode. Anyone can see whether it exists.
+    if (req.method === "GET" && route === "chat") {
+      const url = Netlify.env.get("WHATSAPP_URL") || "";
+      if (!/^https:\/\/(chat\.whatsapp\.com|wa\.me)\/\S+$/.test(url)) return json({ configured: false });
+      return checkCode(req) ? json({ configured: true }) : json({ configured: true, url });
+    }
+
     const denied = checkCode(req);
     if (denied) return denied;
 

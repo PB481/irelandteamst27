@@ -196,7 +196,7 @@ nav.tabs a:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
 .crest{display:flex!important;align-items:center;gap:8px;border:0!important;background:transparent!important;padding:0 8px 0 0!important;margin-right:auto;color:var(--ink)!important;font-size:18px!important}
 .crest b{color:var(--green)}
 .switch .sm{display:none}
-@media (max-width:520px){.switch .lg{display:none}.switch .sm{display:inline}}
+@media (max-width:980px){.switch .lg{display:none}.switch .sm{display:inline}}
 @media (max-width:520px){.crest span{display:none}.switch{gap:4px}.switch a:not(.crest){font-size:14px;padding:4px 7px}}
 .switch{align-items:center;flex-wrap:wrap}
 .switch a[aria-current="page"]{background:var(--green);border-color:var(--green);color:var(--paper)}
@@ -283,6 +283,38 @@ html.ld-open{overflow:hidden}
 .ld .cloud{animation:ld-drift 70s linear infinite alternate}
 .ld .shim line{animation:ld-shim 4s ease-in-out infinite}
 @media (prefers-reduced-motion:reduce){.ld *{animation:none!important}.ld{transition:none}}
+.wx-chip{justify-self:start;display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;background:var(--paper);border:1px solid var(--rule);border-radius:999px;padding:5px 14px}
+.wx-chip:hover{border-color:var(--green)}
+.wx-chip b{color:var(--green)}
+.wx-pick{margin-bottom:12px}
+.wx-pick .chip[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:var(--paper)}
+.wx{display:grid;gap:12px}
+.wx-msg{margin:0;color:var(--muted)}
+.wx-now{background:var(--paper);border:1px solid var(--rule);border-radius:14px;padding:16px;display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;box-shadow:var(--shadow)}
+.wx-now .big{display:flex;align-items:center;gap:10px}
+.wx-now .ic{font-size:44px;line-height:1}
+.wx-now .t{font-family:var(--f-display);font-weight:800;font-size:56px;line-height:1;font-variant-numeric:tabular-nums}
+.wx-now .desc{display:grid;gap:2px;font-size:14.5px;color:var(--muted)}
+.wx-now .desc b{font-size:17px;color:var(--ink)}
+.wx-wind{display:flex;align-items:center;gap:10px}
+.wx-wind .sp{font-family:var(--f-display);font-weight:800;font-size:34px;line-height:1;color:var(--green)}
+.wx-wind small{display:block;font-size:13px;color:var(--muted)}
+.wx-arrow{flex:none;color:var(--green)}
+.wx-verdict{margin-left:auto;font-weight:700;font-size:14px;border-radius:999px;padding:4px 12px;background:var(--green-2);color:var(--green)}
+.wx-verdict.meh{background:var(--gold-2);color:var(--gold)}
+.wx-verdict.rough{background:var(--orange-2);color:var(--orange)}
+.wx-days{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
+.wx-day{background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:10px 6px;display:grid;justify-items:center;gap:3px;text-align:center;font-size:13px;color:var(--muted)}
+.wx-day .d{font-weight:700;color:var(--ink);font-size:13.5px}
+.wx-day .ic{font-size:26px;line-height:1.1}
+.wx-day .hi{font-family:var(--f-display);font-weight:800;font-size:22px;line-height:1;color:var(--ink)}
+.wx-day .w{display:flex;align-items:center;gap:3px;font-weight:600;color:var(--ink)}
+@media (max-width:760px){.wx-days{grid-template-columns:repeat(4,minmax(0,1fr))}.wx-verdict{margin-left:0}}
+@media (max-width:420px){.wx-days{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.chat-fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;text-decoration:none;color:#fff;background:#1FA855;border-radius:999px;padding:11px 16px;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.chat-fab:hover{background:#1A9249}
+.chat-fab:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+@media (max-width:520px){.chat-fab span{display:none}.chat-fab{padding:13px}}
 </style>
 
 <div class="ld" id="landing" role="dialog" aria-modal="true" aria-labelledby="ld-title">
@@ -339,6 +371,7 @@ html.ld-open{overflow:hidden}
       <span><i style="background:var(--orange)"></i>Game's off <b id="fb-off">0</b></span>
       <span><i style="background:var(--rule)"></i>Not in yet <b id="fb-none">7</b></span>
     </div>
+    <a class="wx-chip" id="wxChip" href="#weather" hidden></a>
     <nav class="jump" aria-label="Jump to a player">
       <a href="#pb">Boycey</a><a href="#baz">Baz</a><a href="#stee">Stee</a><a href="#boothy">Boothy</a><a href="#pricey">Pricey</a><a href="#carlo">Carlo</a><a href="#kev">Kev</a><a href="#combos">Pairings</a><a href="#code">Team code</a><a href="#colours">Colours</a><a href="#courses">Course notes</a><a href="#events">Team events</a>
     </nav>
@@ -722,6 +755,14 @@ html.ld-open{overflow:hidden}
     <p class="lede">Hole by hole: where to aim, where not to go, and every blind shot. Read it the night before, keep it on your phone on the course. If you spot something on a practice round, tap "Add local knowledge" on that hole.</p>
     <div class="key"><span class="tag t-blind">Blind shot</span><span class="tag t-ob">Out of bounds</span><span class="tag t-water">Water / burn</span><span class="tag">Other hazard</span><span>Blue-numbered holes have a blind shot.</span></div>
   </header>
+
+  <section id="weather" aria-labelledby="h-wx">
+    <h2 id="h-wx">Arran weather</h2>
+    <p class="sec-intro">Live forecast for each course, with wind in mph. On Arran it's the wind that picks your club.</p>
+    <div class="chips wx-pick" id="wxPick" role="group" aria-label="Forecast for"></div>
+    <div class="wx" id="wx" aria-live="polite"><p class="wx-msg">Loading the forecast…</p></div>
+    <p class="note">Forecast from <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>. <span id="wxTime"></span></p>
+  </section>
 
   <nav class="tabs" aria-label="Courses">
     <a href="#shiskine">Shiskine<small>12 holes · par 42</small></a>
@@ -1162,12 +1203,13 @@ html.ld-open{overflow:hidden}
 <dialog class="codedlg" id="codeDlg" aria-labelledby="codeDlg-h">
   <form method="dialog">
     <h3 id="codeDlg-h">Team passcode</h3>
-    <p>Enter the team passcode to save changes. You only need to do this once on each device.</p>
+    <p>Enter the team passcode to post updates and open the team chat. You only need to do this once on each device.</p>
     <input type="password" autocomplete="current-password" aria-label="Team passcode">
     <p class="err" role="alert" hidden></p>
     <div class="row"><button type="button" class="ghost" data-cancel>Cancel</button><button type="submit" value="ok" class="post">Unlock</button></div>
   </form>
 </dialog>
+<a class="chat-fab" id="chatFab" href="#" hidden><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 3C6.9 3 3 6.6 3 11c0 2.2 1 4.2 2.6 5.6L5 21l4.2-2.2c.9.3 1.8.4 2.8.4 5.1 0 9-3.6 9-8.1S17.1 3 12 3Z"/></svg><span>Team chat</span></a>
 <div class="toast" id="toast" role="status" hidden></div>
 
 <script>
@@ -1177,7 +1219,7 @@ html.ld-open{overflow:hidden}
   function viewFor(h){
     if(h==='events'||/^ev-/.test(h)) return 'events';
     if(/^(rounds|hcp|post-round|latest)$/.test(h)) return 'rounds';
-    if(h==='courses'||/^(shiskine|lamlash|brodick)(-\d+)?$/.test(h)) return 'courses';
+    if(h==='courses'||h==='weather'||/^(shiskine|lamlash|brodick)(-\d+)?$/.test(h)) return 'courses';
     return 'team';
   }
   function show(){
@@ -1232,7 +1274,7 @@ html.ld-open{overflow:hidden}
         e.preventDefault();
         const v=inp.value.trim(); if(!v) return;
         const r=await call('POST','/login',null,v).catch(()=>null);
-        if(r&&r.ok){ code=v; store.set(CODE_KEY,v); finish(true); say('Unlocked. Changes now save for the whole team.'); return; }
+        if(r&&r.ok){ code=v; store.set(CODE_KEY,v); finish(true); say('Unlocked. Changes now save for the whole team.'); loadChat(); return; }
         err.textContent=!r?'Couldn’t check the passcode. Try again.':r.status===401?'That passcode isn’t right.':r.status===503?'Saving isn’t switched on yet. The team passcode still needs setting up in Netlify.':'Couldn’t check the passcode. Try again.';
         err.hidden=false; inp.select();
       };
@@ -1240,6 +1282,39 @@ html.ld-open{overflow:hidden}
       dlg.showModal(); inp.focus();
     });
   }
+
+  // ---- Team chat (WhatsApp) ----
+  // The invite link only comes back from the server with the team passcode.
+  const fab=document.getElementById('chatFab'), CHAT_KEY='st27-chat';
+  fab.setAttribute('aria-label','Open the team WhatsApp chat');
+  function setChat(u){
+    store.set(CHAT_KEY,u||'');
+    if(u){ fab.href=u; fab.target='_blank'; fab.rel='noopener'; }
+    else { fab.href='#'; fab.removeAttribute('target'); }
+  }
+  async function loadChat(){
+    try{
+      const r=await call('GET','/chat'); if(!r.ok) return 'error';
+      const d=await r.json();
+      fab.hidden=!d.configured;
+      setChat(d.url||'');
+      return d.url?'ok':'locked';
+    }catch(_){ return 'error'; }
+  }
+  setChat(store.get(CHAT_KEY));
+  fab.addEventListener('click',async e=>{
+    if(fab.target==='_blank') return;
+    e.preventDefault();
+    for(let tries=0;tries<2;tries++){
+      if(!code && !(await askCode())) return;
+      const got=await loadChat();
+      if(got==='ok'){ location.href=fab.href; return; }
+      if(got==='error') break;
+      code=''; store.set(CODE_KEY,'');
+    }
+    say('Couldn\u2019t open the team chat. Try again.');
+  });
+  loadChat();
 
   // ---- Form check ----
   const forms=[...document.querySelectorAll('.form')];
@@ -1482,6 +1557,78 @@ html.ld-open{overflow:hidden}
 })();
 </script>
 
+<script>
+(function(){
+  const SPOTS=[['shiskine','Shiskine',55.503,-5.327],['lamlash','Lamlash',55.536,-5.128],['brodick','Brodick',55.583,-5.146]];
+  const WMO={0:['Clear','☀️'],1:['Mostly clear','🌤️'],2:['Partly cloudy','⛅'],3:['Overcast','☁️'],45:['Fog','🌫️'],48:['Freezing fog','🌫️'],
+    51:['Light drizzle','🌦️'],53:['Drizzle','🌦️'],55:['Heavy drizzle','🌧️'],56:['Freezing drizzle','🌧️'],57:['Freezing drizzle','🌧️'],
+    61:['Light rain','🌦️'],63:['Rain','🌧️'],65:['Heavy rain','🌧️'],66:['Freezing rain','🌧️'],67:['Freezing rain','🌧️'],
+    71:['Light snow','🌨️'],73:['Snow','🌨️'],75:['Heavy snow','❄️'],77:['Snow grains','🌨️'],
+    80:['Light showers','🌦️'],81:['Showers','🌧️'],82:['Heavy showers','⛈️'],85:['Snow showers','🌨️'],86:['Snow showers','🌨️'],
+    95:['Thunderstorm','⛈️'],96:['Thunder and hail','⛈️'],99:['Thunder and hail','⛈️']};
+  const wmo=c=>WMO[c]||['—','🌡️'];
+  const compass=d=>['N','NE','E','SE','S','SW','W','NW'][Math.round(d/45)%8];
+  // Arrow points where the wind is blowing to.
+  const arrow=(d,size)=>'<svg class="wx-arrow" viewBox="0 0 24 24" width="'+size+'" height="'+size+'" aria-hidden="true" style="transform:rotate('+Math.round(d+180)+'deg)"><path fill="currentColor" d="M12 2 5 20l7-4 7 4Z"/></svg>';
+  function verdict(wind,gust,rain){
+    if(gust>=35||wind>=22||rain>=70) return ['rough','Tough day out'];
+    if(gust>=25||wind>=15||rain>=40) return ['meh','Playable, club up'];
+    return ['','Good golf day'];
+  }
+  const pick=document.getElementById('wxPick'), box=document.getElementById('wx'), when=document.getElementById('wxTime'), chip=document.getElementById('wxChip');
+  let data=null, spot=0;
+  try{ const k=sessionStorage.getItem('st27-wx-spot'); if(k) spot=Math.max(0,SPOTS.findIndex(s=>s[0]===k)); }catch(_){}
+  const esc=v=>String(v).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+  function render(){
+    pick.innerHTML=SPOTS.map((s,i)=>'<button type="button" class="chip" data-i="'+i+'" aria-pressed="'+(i===spot)+'">'+s[1]+'</button>').join('');
+    if(!data){ return; }
+    const w=data[spot], c=w.current, d=w.daily, [txt,dayIc]=wmo(c.weather_code), ic=!c.is_day&&c.weather_code<=1?'🌙':dayIc;
+    const [cls,vtxt]=verdict(d.wind_speed_10m_max[0],d.wind_gusts_10m_max[0],d.precipitation_probability_max[0]);
+    const days=d.time.map((t,i)=>{
+      const [dt,di]=wmo(d.weather_code[i]), day=new Date(t+'T12:00:00');
+      const lbl=i===0?'Today':day.toLocaleDateString('en-IE',{weekday:'short',day:'numeric'});
+      return '<li class="wx-day" aria-label="'+esc(lbl+': '+dt+', high '+Math.round(d.temperature_2m_max[i])+' degrees, low '+Math.round(d.temperature_2m_min[i])+', '+d.precipitation_probability_max[i]+'% chance of rain, wind '+Math.round(d.wind_speed_10m_max[i])+' mph from the '+compass(d.wind_direction_10m_dominant[i])+', gusts '+Math.round(d.wind_gusts_10m_max[i]))+'">'
+        +'<span class="d">'+esc(lbl)+'</span><span class="ic" aria-hidden="true">'+di+'</span>'
+        +'<span><span class="hi">'+Math.round(d.temperature_2m_max[i])+'°</span> '+Math.round(d.temperature_2m_min[i])+'°</span>'
+        +'<span>💧 '+d.precipitation_probability_max[i]+'%</span>'
+        +'<span class="w">'+arrow(d.wind_direction_10m_dominant[i],14)+Math.round(d.wind_speed_10m_max[i])+' mph</span>'
+        +'<span>gusts '+Math.round(d.wind_gusts_10m_max[i])+'</span></li>';
+    }).join('');
+    box.innerHTML='<div class="wx-now">'
+      +'<div class="big"><span class="ic" aria-hidden="true">'+ic+'</span><span class="t">'+Math.round(c.temperature_2m)+'°</span></div>'
+      +'<div class="desc"><b>'+esc(txt)+'</b><span>Feels like '+Math.round(c.apparent_temperature)+'° at '+SPOTS[spot][1]+'</span></div>'
+      +'<div class="wx-wind">'+arrow(c.wind_direction_10m,34)+'<div><span class="sp">'+Math.round(c.wind_speed_10m)+' mph</span><small>from the '+compass(c.wind_direction_10m)+', gusts '+Math.round(c.wind_gusts_10m)+' mph</small></div></div>'
+      +'<span class="wx-verdict '+cls+'">Today overall: '+vtxt+'</span>'
+      +'</div><ol class="wx-days">'+days+'</ol>';
+    when.textContent='Updated '+new Date().toLocaleTimeString('en-IE',{hour:'2-digit',minute:'2-digit'})+'.';
+    const b=data[2].current, [bt]=wmo(b.weather_code);
+    chip.innerHTML='🏝️ Arran now: <b>'+Math.round(b.temperature_2m)+'°</b> '+esc(bt.toLowerCase())+' · wind '+Math.round(b.wind_speed_10m)+' mph '+compass(b.wind_direction_10m);
+    chip.hidden=false;
+  }
+  pick.addEventListener('click',e=>{
+    const b=e.target.closest('button[data-i]'); if(!b) return;
+    spot=+b.dataset.i; try{sessionStorage.setItem('st27-wx-spot',SPOTS[spot][0]);}catch(_){}
+    render();
+  });
+  async function load(){
+    const q='latitude='+SPOTS.map(s=>s[2]).join(',')+'&longitude='+SPOTS.map(s=>s[3]).join(',')
+      +'&current=is_day,temperature_2m,apparent_temperature,weather_code,wind_speed_10m,wind_direction_10m,wind_gusts_10m'
+      +'&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,wind_speed_10m_max,wind_gusts_10m_max,wind_direction_10m_dominant'
+      +'&wind_speed_unit=mph&timezone=Europe%2FLondon&forecast_days=7';
+    try{
+      const r=await fetch('https://api.open-meteo.com/v1/forecast?'+q);
+      if(!r.ok) throw new Error(r.status);
+      const j=await r.json(); if(!Array.isArray(j)||j.length!==SPOTS.length) throw new Error('shape');
+      data=j; render();
+    }catch(_){
+      if(!data) box.innerHTML='<p class="wx-msg">The forecast isn’t available right now. Try again later.</p>';
+    }
+  }
+  render(); load();
+  setInterval(()=>{ if(!document.hidden) load(); },30*60*1000);
+})();
+</script>
 <script>
 (function(){
   const ld=document.getElementById('landing'); if(!ld) return;

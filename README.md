@@ -11,3 +11,15 @@ The ST27 Irish Team site, hosted on Netlify from the `main` branch.
 Anyone can view the site. Saving a form check or a comment needs the team passcode.
 Set it in Netlify under **Site configuration → Environment variables** as `TEAM_CODE`,
 then redeploy. To change the passcode, update the variable and redeploy.
+
+## Team chat
+
+The "Team chat" button opens the team WhatsApp group. Set the group's invite link
+(`https://chat.whatsapp.com/...`) in Netlify as `WHATSAPP_URL`, then redeploy. The
+link is only given out to people who have entered the team passcode. Without it
+set, the button stays hidden.
+
+## Weather
+
+Live Arran forecasts (Shiskine, Lamlash, Brodick) come from Open-Meteo in the
+browser. No key needed.
