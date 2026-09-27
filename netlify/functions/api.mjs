@@ -1,4 +1,4 @@
-// Shared storage for the ST27 site: the team form board and the comment threads.
+// Shared storage for the ST27 site: the team form board, comment threads and posted rounds.
 // Anyone can read. Writing needs the team passcode, set as TEAM_CODE in Netlify.
 import { getStore } from "@netlify/blobs";
 
@@ -9,6 +9,9 @@ const NOTE_MAX = 80;
 const NAME_MAX = 30;
 const TEXT_MAX = 500;
 const THREAD_MAX = 200;
+const COURSE_MAX = 60;
+const ROUND_NOTE_MAX = 300;
+const ROUNDS_MAX = 500;
 
 const json = (body, status = 200) =>
   new Response(JSON.stringify(body), {
@@ -27,6 +30,31 @@ async function readBody(req) {
   }
 }
 
+// Returns a clean round, or an error code string.
+function cleanRound(b) {
+  const date = typeof b.date === "string" && /^\d{4}-\d{2}-\d{2}$/.test(b.date) ? b.date : "";
+  const tomorrow = new Date(Date.now() + 864e5).toISOString().slice(0, 10);
+  if (!date || date < "2020-01-01" || date > tomorrow) return "bad_date";
+  const course = clean(b.course, COURSE_MAX);
+  if (!course) return "missing_course";
+  const int = (v, lo, hi) => (Number.isInteger(v) && v >= lo && v <= hi ? v : null);
+  const points = int(b.points, 0, 60);
+  const gross = int(b.gross, 50, 160);
+  if (points === null && gross === null) return "missing_score";
+  const hcp =
+    typeof b.hcp === "number" && Number.isFinite(b.hcp) && b.hcp >= -10 && b.hcp <= 54
+      ? Math.round(b.hcp * 10) / 10
+      : null;
+  return { date, course, points, gross, hcp, comment: clean(b.comment, ROUND_NOTE_MAX) };
+}
+
+async function removeById(store, key, list, id) {
+  const next = list.filter((x) => x.id !== id);
+  if (next.length) await store.setJSON(key, next);
+  else await store.delete(key);
+  return json(next);
+}
+
 function checkCode(req) {
   const code = Netlify.env.get("TEAM_CODE");
   if (!code) return json({ error: "not_configured" }, 503);
@@ -41,10 +69,15 @@ export default async (req) => {
   try {
     if (req.method === "GET" && route === "state") {
       const form = {};
+      const rounds = {};
       await Promise.all(
         PLAYERS.map(async (p) => {
-          const d = await store.get(`form/${p}`, { type: "json" });
+          const [d, r] = await Promise.all([
+            store.get(`form/${p}`, { type: "json" }),
+            store.get(`rounds/${p}`, { type: "json" }),
+          ]);
           if (d) form[p] = d;
+          if (Array.isArray(r) && r.length) rounds[p] = r;
         })
       );
       const comments = {};
@@ -55,7 +88,7 @@ export default async (req) => {
           if (Array.isArray(list) && list.length) comments[key.slice("comments/".length)] = list;
         })
       );
-      return json({ form, comments });
+      return json({ form, comments, rounds });
     }
 
     if (req.method === "POST" && route === "login") {
@@ -95,12 +128,23 @@ export default async (req) => {
         return json(list);
       }
 
-      if (req.method === "DELETE" && b) {
-        const next = list.filter((c) => c.id !== b);
-        if (next.length) await store.setJSON(key, next);
-        else await store.delete(key);
-        return json(next);
+      if (req.method === "DELETE" && b) return await removeById(store, key, list, b);
+    }
+
+    if (route === "rounds" && PLAYERS.includes(a)) {
+      const key = `rounds/${a}`;
+      const list = (await store.get(key, { type: "json" })) || [];
+
+      if (req.method === "POST") {
+        const round = cleanRound(await readBody(req));
+        if (typeof round === "string") return json({ error: round }, 400);
+        if (list.length >= ROUNDS_MAX) return json({ error: "full" }, 409);
+        list.push({ id: crypto.randomUUID(), ...round, at: new Date().toISOString() });
+        await store.setJSON(key, list);
+        return json(list);
       }
+
+      if (req.method === "DELETE" && b) return await removeById(store, key, list, b);
     }
 
     return json({ error: "not_found" }, 404);

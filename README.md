@@ -3,7 +3,8 @@
 The ST27 Irish Team site, hosted on Netlify from the `main` branch.
 
 - `index.html` is the whole site.
-- `netlify/functions/api.mjs` saves the team form board and comments in Netlify Blobs.
+- `netlify/functions/api.mjs` saves the team form board, comments and posted rounds in Netlify Blobs.
+- Handicap tracking starts from the ST26 handicaps, set in `SQUAD` in `index.html`.
 
 ## Team passcode
 
