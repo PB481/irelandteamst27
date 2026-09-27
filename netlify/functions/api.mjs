@@ -1,0 +1,113 @@
+// Shared storage for the ST27 site: the team form board and the comment threads.
+// Anyone can read. Writing needs the team passcode, set as TEAM_CODE in Netlify.
+import { getStore } from "@netlify/blobs";
+
+const PLAYERS = ["pb", "baz", "stee", "boothy", "pricey", "carlo", "kev"];
+const STATUSES = ["good", "little", "off"];
+const TARGET = /^[a-z0-9-]{1,40}$/;
+const NOTE_MAX = 80;
+const NAME_MAX = 30;
+const TEXT_MAX = 500;
+const THREAD_MAX = 200;
+
+const json = (body, status = 200) =>
+  new Response(JSON.stringify(body), {
+    status,
+    headers: { "content-type": "application/json", "cache-control": "no-store" },
+  });
+
+const clean = (v, max) => (typeof v === "string" ? v.trim().slice(0, max) : "");
+
+async function readBody(req) {
+  try {
+    const b = await req.json();
+    return b && typeof b === "object" ? b : {};
+  } catch {
+    return {};
+  }
+}
+
+function checkCode(req) {
+  const code = Netlify.env.get("TEAM_CODE");
+  if (!code) return json({ error: "not_configured" }, 503);
+  if (req.headers.get("x-team-code") !== code) return json({ error: "bad_code" }, 401);
+  return null;
+}
+
+export default async (req) => {
+  const [route, a, b] = new URL(req.url).pathname.split("/").filter(Boolean).slice(1);
+  const store = getStore({ name: "st27", consistency: "strong" });
+
+  try {
+    if (req.method === "GET" && route === "state") {
+      const form = {};
+      await Promise.all(
+        PLAYERS.map(async (p) => {
+          const d = await store.get(`form/${p}`, { type: "json" });
+          if (d) form[p] = d;
+        })
+      );
+      const comments = {};
+      const { blobs } = await store.list({ prefix: "comments/" });
+      await Promise.all(
+        blobs.map(async ({ key }) => {
+          const list = await store.get(key, { type: "json" });
+          if (Array.isArray(list) && list.length) comments[key.slice("comments/".length)] = list;
+        })
+      );
+      return json({ form, comments });
+    }
+
+    if (req.method === "POST" && route === "login") {
+      return checkCode(req) || json({ ok: true });
+    }
+
+    const denied = checkCode(req);
+    if (denied) return denied;
+
+    if (req.method === "PUT" && route === "form" && PLAYERS.includes(a)) {
+      const body = await readBody(req);
+      const key = `form/${a}`;
+      const cur = (await store.get(key, { type: "json" })) || {};
+      const next = {
+        status: STATUSES.includes(cur.status) ? cur.status : null,
+        note: typeof cur.note === "string" ? cur.note : "",
+      };
+      if ("status" in body) next.status = STATUSES.includes(body.status) ? body.status : null;
+      if ("note" in body) next.note = clean(body.note, NOTE_MAX);
+      next.updatedAt = new Date().toISOString();
+      await store.setJSON(key, next);
+      return json(next);
+    }
+
+    if (route === "comments" && TARGET.test(a || "")) {
+      const key = `comments/${a}`;
+      const list = (await store.get(key, { type: "json" })) || [];
+
+      if (req.method === "POST") {
+        const body = await readBody(req);
+        const name = clean(body.name, NAME_MAX);
+        const text = clean(body.text, TEXT_MAX);
+        if (!name || !text) return json({ error: "missing" }, 400);
+        if (list.length >= THREAD_MAX) return json({ error: "full" }, 409);
+        list.push({ id: crypto.randomUUID(), name, text, at: new Date().toISOString() });
+        await store.setJSON(key, list);
+        return json(list);
+      }
+
+      if (req.method === "DELETE" && b) {
+        const next = list.filter((c) => c.id !== b);
+        if (next.length) await store.setJSON(key, next);
+        else await store.delete(key);
+        return json(next);
+      }
+    }
+
+    return json({ error: "not_found" }, 404);
+  } catch (e) {
+    console.error(e);
+    return json({ error: "server" }, 500);
+  }
+};
+
+export const config = { path: "/api/*" };

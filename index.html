@@ -1,4 +1,28 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}.thread{grid-column:1/-1;border:1px solid var(--rule);border-radius:10px;padding:10px 12px;display:grid;gap:10px;background:var(--bg)}
+.thread ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.thread li{display:grid;gap:2px}
+.thread li.empty{font-size:13.5px;color:var(--muted)}
+.thread .meta{display:flex;gap:8px;align-items:baseline;font-size:12.5px;color:var(--faint)}
+.thread .meta b{font-size:13.5px;color:var(--ink)}
+.thread li p{margin:0;font-size:14px;color:var(--ink);white-space:pre-wrap;overflow-wrap:anywhere}
+.thread form{display:grid;gap:6px}
+.thread textarea,.thread select,.codedlg input{font:inherit;font-size:14px;color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:8px;padding:6px 9px;min-width:0}
+.thread textarea{resize:vertical;min-height:64px}
+.thread .row,.codedlg .row{display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap}
+.thread .row select{margin-right:auto}
+.post,.ghost{font:inherit;font-size:13.5px;font-weight:600;border-radius:8px;padding:5px 12px;cursor:pointer;border:1.5px solid var(--green)}
+.post{background:var(--green);color:var(--paper)}
+.post:disabled{opacity:.6;cursor:default}
+.ghost{background:transparent;color:var(--green)}
+.del{margin-left:auto;font:inherit;font-size:12px;color:var(--muted);background:none;border:0;padding:0;text-decoration:underline;cursor:pointer}
+.post:focus-visible,.ghost:focus-visible,.del:focus-visible,.thread textarea:focus-visible,.thread select:focus-visible,.codedlg input:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.codedlg{background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:14px;padding:18px;width:min(360px,calc(100vw - 32px));box-sizing:border-box}
+.codedlg::backdrop{background:rgba(0,0,0,.45)}
+.codedlg form{display:grid;gap:10px}
+.codedlg h3{margin:0;font-size:18px}
+.codedlg p{margin:0;font-size:14px;color:var(--muted)}
+.codedlg .err{color:var(--red)}
+</style></head><body>
 <title>ST27 Irish Team</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -451,7 +475,7 @@ nav.tabs a:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
         <h3>Fourballs (better ball)</h3>
         <p class="hint">A bad hole costs nothing in this format, so it's where our higher handicaps and streak players do the damage.</p>
         <div class="options">
-          <div class="opt" data-comment-target>
+          <div class="opt" id="opt-a" data-comment-target>
             <div class="opt-head"><b>Option A</b><span>Low + high</span></div>
             <ul class="pairs">
               <li>Baz <span class="plus">+</span> Boycey <span class="tag">7 + 21</span></li>
@@ -462,7 +486,7 @@ nav.tabs a:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
             <p class="why">Every pair has one steady low handicap and one player with shots. Pricey comes in fresh for foursomes.</p>
             <button class="discuss" type="button">Discuss this</button>
           </div>
-          <div class="opt" data-comment-target>
+          <div class="opt" id="opt-b" data-comment-target>
             <div class="opt-head"><b>Option B</b><span>Major winners</span></div>
             <ul class="pairs">
               <li>Kev <span class="plus">+</span> Boycey <span class="tag">Four majors between them</span></li>
@@ -473,7 +497,7 @@ nav.tabs a:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
             <p class="why">Every pair has won majors. Boothy rests here and leads the foursomes.</p>
             <button class="discuss" type="button">Discuss this</button>
           </div>
-          <div class="opt" data-comment-target>
+          <div class="opt" id="opt-c" data-comment-target>
             <div class="opt-head"><b>Option C</b><span>Champions together</span></div>
             <ul class="pairs">
               <li>Baz <span class="plus">+</span> Boothy <span class="tag">Salver champions</span></li>
@@ -491,7 +515,7 @@ nav.tabs a:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
         <h3>Foursomes (alternate shot)</h3>
         <p class="hint">Steadiness wins here. Partners who hit fairways and trust each other's game.</p>
         <div class="options">
-          <div class="opt" data-comment-target>
+          <div class="opt" id="opt-d" data-comment-target>
             <div class="opt-head"><b>Option D</b><span>Steady heads</span></div>
             <ul class="pairs">
               <li>Stee <span class="plus">+</span> Pricey <span class="tag">Big-match experience</span></li>
@@ -502,7 +526,7 @@ nav.tabs a:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
             <p class="why">The captain sits this one out and walks the course, backing every pair.</p>
             <button class="discuss" type="button">Discuss this</button>
           </div>
-          <div class="opt" data-comment-target>
+          <div class="opt" id="opt-e" data-comment-target>
             <div class="opt-head"><b>Option E</b><span>Rotate one in</span></div>
             <ul class="pairs">
               <li>Baz <span class="plus">+</span> Boycey</li>
@@ -518,7 +542,7 @@ nav.tabs a:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
 
       <div class="combo-group">
         <h3>Singles order</h3>
-        <div class="singles opt" data-comment-target>
+        <div class="singles opt" id="opt-singles" data-comment-target>
           <ol class="order">
             <li><b>Boothy</b><small>Form player sets the tempo</small></li>
             <li><b>Kev</b><small>Major winner keeps it rolling</small></li>
@@ -964,7 +988,7 @@ nav.tabs a:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
     <h2 id="h-ev">Coming up</h2>
     <p class="sec-intro">Tap "Discuss this" on an event to suggest dates or say you're in.</p>
     <div class="events">
-      <article class="ev first" data-comment-target>
+      <article class="ev first" id="ev-st-annes" data-comment-target>
         <span class="status set">First event · venue picked</span>
         <h3>St Anne's</h3>
         <span class="where">Bull Island · Dollymount · Dublin 5 · links</span>
@@ -982,7 +1006,7 @@ nav.tabs a:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
         <p>A links course by the sea, so it's good practice for Arran's wind and running shots. <a href="https://www.stanneslinksgolf.com/Visitors" target="_blank" rel="noopener">Visitor info</a></p>
         <button class="discuss" type="button">Discuss this</button>
       </article>
-      <article class="ev ph" data-comment-target>
+      <article class="ev ph" id="ev-dublin" data-comment-target>
         <span class="status tbc">Placeholder</span>
         <h3>Dublin</h3>
         <span class="where">Venue to be decided</span>
@@ -990,7 +1014,7 @@ nav.tabs a:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
         <p>Second Dublin get-together. Ideas welcome.</p>
         <button class="discuss" type="button">Discuss this</button>
       </article>
-      <article class="ev ph" data-comment-target>
+      <article class="ev ph" id="ev-sligo" data-comment-target>
         <span class="status tbc">Placeholder</span>
         <h3>Sligo</h3>
         <span class="where">Venue to be decided</span>
@@ -998,7 +1022,7 @@ nav.tabs a:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
         <p>A west-coast links weekend. Ideas welcome.</p>
         <button class="discuss" type="button">Discuss this</button>
       </article>
-      <article class="ev ph" data-comment-target>
+      <article class="ev ph" id="ev-donegal" data-comment-target>
         <span class="status tbc">Placeholder</span>
         <h3>Donegal</h3>
         <span class="where">Venue to be decided</span>
@@ -1009,6 +1033,15 @@ nav.tabs a:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
     </div>
   </section>
 </div>
+<dialog class="codedlg" id="codeDlg" aria-labelledby="codeDlg-h">
+  <form method="dialog">
+    <h3 id="codeDlg-h">Team passcode</h3>
+    <p>Enter the team passcode to save changes. You only need to do this once on each device.</p>
+    <input type="password" autocomplete="current-password" aria-label="Team passcode">
+    <p class="err" role="alert" hidden></p>
+    <div class="row"><button type="button" class="ghost" data-cancel>Cancel</button><button type="submit" value="ok" class="post">Unlock</button></div>
+  </form>
+</dialog>
 <div class="toast" id="toast" role="status" hidden></div>
 
 <script>
@@ -1016,7 +1049,7 @@ nav.tabs a:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
   const views={team:document.getElementById('team'),courses:document.getElementById('courses'),events:document.getElementById('events')};
   const tabs={team:document.getElementById('sw-team'),courses:document.getElementById('sw-courses'),events:document.getElementById('sw-events')};
   function viewFor(h){
-    if(h==='events') return 'events';
+    if(h==='events'||/^ev-/.test(h)) return 'events';
     if(h==='courses'||/^(shiskine|lamlash|brodick)(-\d+)?$/.test(h)) return 'courses';
     return 'team';
   }
@@ -1030,43 +1063,64 @@ nav.tabs a:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
 </script>
 <script>
 (function(){
-  const toast = document.getElementById('toast');
-  let t;
-  const say = msg => { toast.textContent = msg; toast.hidden = false; clearTimeout(t); t = setTimeout(()=>{ toast.hidden = true; }, 3200); };
-  const buttons = [...document.querySelectorAll('.discuss')];
-  let comments = null, ready = false;
-  if (window.claude && typeof window.claude.use === 'function') {
-    window.claude.use('comments').then(c => { comments = c; ready = true; if (!c) buttons.forEach(b => b.hidden = true); }).catch(()=>{ ready = true; buttons.forEach(b => b.hidden = true); });
-  } else {
-    buttons.forEach(b => b.hidden = true);
-  }
-  buttons.forEach(b => b.addEventListener('click', async () => {
-    const target = b.closest('[data-comment-target]');
-    if (!comments) { say(ready ? 'Commenting is not available in this view.' : 'Comments are still loading. Try again in a moment.'); return; }
-    try {
-      const r = await comments.openComposer({ element: target });
-      if (!r || !r.opened) say('Finish or close the comment you already have open first.');
-    } catch (e) {
-      if (e && (e.code === 'unavailable' || e.code === 'not_granted' || e.code === 'forbidden')) { buttons.forEach(x => x.hidden = true); say('Commenting is off in this view. Use the comment button in the toolbar.'); }
-      else if (e && e.code === 'rate_limited') say('Slow down a little, then try again.');
-      else say('Could not open the comment box. Try again.');
-    }
-  }));
-})();
-
-(function(){
+  const API='/api', CODE_KEY='st27-team-code', NAME_KEY='st27-name';
+  const PEOPLE=['Boycey','Baz','Stee','Boothy','Pricey','Carlo','Kev','Guest'];
   const STAT={good:1,little:1,off:1};
-  const forms=[...document.querySelectorAll('.form')];
   const toast=document.getElementById('toast'); let tt;
   const say=m=>{toast.textContent=m;toast.hidden=false;clearTimeout(tt);tt=setTimeout(()=>{toast.hidden=true;},3200);};
-  let db=null, state={}, readOnly=false;
-  const queue={};
+  const store={get(k){try{return localStorage.getItem(k)||'';}catch(_){return '';}},set(k,v){try{v?localStorage.setItem(k,v):localStorage.removeItem(k);}catch(_){}}};
   const fmt=iso=>{const d=new Date(iso); return isNaN(d)?'':d.toLocaleDateString('en-IE',{day:'numeric',month:'short',year:'numeric'});};
-  function setEnabled(on){forms.forEach(f=>f.querySelectorAll('button,input').forEach(el=>el.disabled=!on));}
-  function render(){
+  const el=(tag,props,...kids)=>{const n=document.createElement(tag); Object.assign(n,props||{}); kids.forEach(k=>k!=null&&n.append(k)); return n;};
+
+  let code=store.get(CODE_KEY), online=false;
+  let state={form:{},comments:{}};
+
+  // ---- API ----
+  function call(method,path,body,useCode){
+    const h={}; if(body) h['content-type']='application/json';
+    const c=useCode===undefined?code:useCode; if(c) h['x-team-code']=c;
+    return fetch(API+path,{method,headers:h,body:body?JSON.stringify(body):undefined,cache:'no-store'});
+  }
+  async function write(method,path,body){
+    if(!code && !(await askCode())) return null;
+    let r=await call(method,path,body).catch(()=>null);
+    if(r&&r.status===401){ code=''; store.set(CODE_KEY,''); if(!(await askCode())) return null; r=await call(method,path,body).catch(()=>null); }
+    if(!r){ say('Couldn’t reach the site. Check your connection and try again.'); return null; }
+    if(r.status===503){ say('Saving isn’t switched on yet.'); return null; }
+    if(!r.ok){ say('Couldn’t save that. Try again.'); return null; }
+    return r.json();
+  }
+
+  // ---- Team passcode ----
+  const dlg=document.getElementById('codeDlg');
+  dlg.querySelector('[data-cancel]').addEventListener('click',()=>dlg.close());
+  function askCode(){
+    return new Promise(res=>{
+      const f=dlg.querySelector('form'), inp=dlg.querySelector('input'), err=dlg.querySelector('.err');
+      err.hidden=true; inp.value='';
+      let settled=false;
+      const finish=ok=>{ if(settled) return; settled=true; f.removeEventListener('submit',onSubmit); dlg.removeEventListener('close',onClose); if(dlg.open) dlg.close(); res(ok); };
+      const onClose=()=>finish(false);
+      const onSubmit=async e=>{
+        e.preventDefault();
+        const v=inp.value.trim(); if(!v) return;
+        const r=await call('POST','/login',null,v).catch(()=>null);
+        if(r&&r.ok){ code=v; store.set(CODE_KEY,v); finish(true); say('Unlocked. Changes now save for the whole team.'); return; }
+        err.textContent=!r?'Couldn’t check the passcode. Try again.':r.status===401?'That passcode isn’t right.':r.status===503?'Saving isn’t switched on yet. The team passcode still needs setting up in Netlify.':'Couldn’t check the passcode. Try again.';
+        err.hidden=false; inp.select();
+      };
+      f.addEventListener('submit',onSubmit); dlg.addEventListener('close',onClose);
+      dlg.showModal(); inp.focus();
+    });
+  }
+
+  // ---- Form check ----
+  const forms=[...document.querySelectorAll('.form')];
+  function setEnabled(on){forms.forEach(f=>f.querySelectorAll('button,input').forEach(x=>x.disabled=!on));}
+  function renderForms(){
     const n={good:0,little:0,off:0,none:0};
     forms.forEach(f=>{
-      const id=f.dataset.player, d=state[id]||{};
+      const id=f.dataset.player, d=state.form[id]||{};
       const st=STAT[d.status]?d.status:'';
       n[st||'none']++;
       f.closest('.card').dataset.form=st;
@@ -1074,46 +1128,104 @@ nav.tabs a:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
       const w=d.updatedAt?fmt(d.updatedAt):'';
       f.querySelector('.when').textContent=(st||d.note)&&w?'Updated '+w:'Not checked in yet';
       const note=typeof d.note==='string'?d.note.slice(0,80):'';
-      const ns=f.querySelector('.note-show'); ns.textContent=note?'\u201C'+note+'\u201D':''; ns.hidden=!note;
+      const ns=f.querySelector('.note-show'); ns.textContent=note?'“'+note+'”':''; ns.hidden=!note;
       const inp=f.querySelector('input'); if(document.activeElement!==inp) inp.value=note;
     });
-    for(const k in n){const el=document.getElementById('fb-'+k); if(el) el.textContent=n[k];}
+    for(const k in n){const x=document.getElementById('fb-'+k); if(x) x.textContent=n[k];}
   }
-  function write(id,patch){
-    if(!db||readOnly) return;
-    const cur=state[id]||{};
-    const body={status:STAT[cur.status]?cur.status:null,note:typeof cur.note==='string'?cur.note:'',...patch,updatedAt:new Date().toISOString()};
-    const prev=queue[id]||Promise.resolve();
-    queue[id]=prev.then(()=>db.doc('form/'+id).set(body)).catch(e=>{
-      const c=e&&e.code;
-      if(c==='invalid_argument'||c==='not_granted'||c==='revoked'){readOnly=true;setEnabled(false);say('You can see the form board, but updating it needs edit access to this page.');}
-      else if(c==='resource_exhausted') say('Too many updates at once. Try again in a moment.');
-      else say('Could not save that. Try again.');
-    });
+  async function saveForm(id,patch,msg){
+    const r=await write('PUT','/form/'+id,patch);
+    if(r){ state.form[id]=r; renderForms(); if(msg) say(msg); }
   }
   forms.forEach(f=>{
     const id=f.dataset.player;
     f.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{
-      if(!db||readOnly) return;
-      if((state[id]||{}).status===c.dataset.s) return;
-      write(id,{status:c.dataset.s});
+      if((state.form[id]||{}).status===c.dataset.s) return;
+      saveForm(id,{status:c.dataset.s});
     }));
     const inp=f.querySelector('input'), btn=f.querySelector('.note-row button');
-    const save=()=>{ if(!db||readOnly) return; const v=inp.value.trim().slice(0,80); if(v===((state[id]||{}).note||'')) return; write(id,{note:v}); inp.blur(); say('Note saved.'); };
+    const save=()=>{ const v=inp.value.trim().slice(0,80); if(v===((state.form[id]||{}).note||'')) return; inp.blur(); saveForm(id,{note:v},'Note saved.'); };
     btn.addEventListener('click',save);
     inp.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();save();}});
   });
-  if(!(window.claude&&typeof window.claude.use==='function')){forms.forEach(f=>f.querySelector('.when').textContent='Form check works when opened in Claude');return;}
-  window.claude.use('db').then(async d=>{
-    if(!d){forms.forEach(f=>f.querySelector('.when').textContent='Form check isn\u2019t available in this view');return;}
-    db=d;
-    try{const u=await window.claude.use('user'); if(u&&typeof u.can==='function'){const ok=await u.can('data.write'); if(ok===false) readOnly=true;}}catch(_){}
-    setEnabled(!readOnly);
-    db.collection('form').onSnapshot(snap=>{
-      const next={}; snap.docs.forEach(doc=>{ if(doc.exists){ const x=doc.data()||{}; next[doc.id]={status:x.status,note:x.note,updatedAt:x.updatedAt}; }});
-      state=next; render();
-    },e=>{ if(e&&e.code==='revoked'){readOnly=true;setEnabled(false);} });
-  }).catch(()=>{});
+
+  // ---- Comment threads ----
+  const threads=[];
+  document.querySelectorAll('[data-comment-target]').forEach(target=>{
+    const key=target.id, btn=target.querySelector('.discuss');
+    if(!key||!btn) return;
+    const label=btn.textContent;
+    btn.setAttribute('aria-expanded','false');
+    let panel=null, list=null;
+    function build(){
+      list=el('ul');
+      const who=el('select');
+      who.setAttribute('aria-label','Your name');
+      PEOPLE.forEach(p=>who.append(el('option',{value:p,textContent:p})));
+      who.value=PEOPLE.includes(store.get(NAME_KEY))?store.get(NAME_KEY):'Boycey';
+      const text=el('textarea',{maxLength:500,placeholder:'Add your thoughts…',rows:3});
+      text.setAttribute('aria-label','Comment');
+      const post=el('button',{type:'submit',className:'post',textContent:'Post'});
+      const close=el('button',{type:'button',className:'ghost',textContent:'Close'});
+      close.addEventListener('click',()=>toggle(false));
+      const form=el('form',{},text,el('div',{className:'row'},who,close,post));
+      form.addEventListener('submit',async e=>{
+        e.preventDefault();
+        const t=text.value.trim(); if(!t) { text.focus(); return; }
+        store.set(NAME_KEY,who.value);
+        post.disabled=true;
+        const r=await write('POST','/comments/'+key,{name:who.value,text:t});
+        post.disabled=false;
+        if(r){ state.comments[key]=r; text.value=''; renderThreads(); say('Comment posted.'); }
+      });
+      panel=el('div',{className:'thread',hidden:true},list,form);
+      btn.after(panel);
+    }
+    function render(){
+      const items=state.comments[key]||[];
+      btn.textContent=items.length?label+' · '+items.length:label;
+      if(!list) return;
+      list.replaceChildren(...(items.length?items.map(c=>{
+        const del=el('button',{type:'button',className:'del',textContent:'Delete'});
+        del.setAttribute('aria-label','Delete comment from '+c.name);
+        del.addEventListener('click',async()=>{
+          if(!confirm('Delete this comment for everyone?')) return;
+          const r=await write('DELETE','/comments/'+key+'/'+encodeURIComponent(c.id));
+          if(r){ state.comments[key]=r; renderThreads(); }
+        });
+        return el('li',{},el('div',{className:'meta'},el('b',{textContent:c.name}),el('span',{textContent:fmt(c.at)}),del),el('p',{textContent:c.text}));
+      }):[el('li',{className:'empty',textContent:'No comments yet. Start the conversation.'})]));
+    }
+    function toggle(open){
+      if(open&&!panel){ build(); render(); }
+      if(!panel) return;
+      panel.hidden=!open; btn.setAttribute('aria-expanded',String(open));
+      if(open) panel.querySelector('textarea').focus(); else btn.focus();
+    }
+    btn.addEventListener('click',()=>{
+      if(!online){ say('Comments are offline right now. Try again in a moment.'); return; }
+      toggle(!panel||panel.hidden);
+    });
+    threads.push(render);
+  });
+  function renderThreads(){ threads.forEach(r=>r()); }
+
+  // ---- Load and keep fresh ----
+  async function load(){
+    try{
+      const r=await fetch(API+'/state',{cache:'no-store'});
+      if(!r.ok) throw new Error(r.status);
+      const d=await r.json();
+      state={form:d.form||{},comments:d.comments||{}};
+      if(!online){ online=true; setEnabled(true); }
+      renderForms(); renderThreads();
+    }catch(_){
+      if(!online) forms.forEach(f=>f.querySelector('.when').textContent='Form check is offline right now');
+    }
+  }
+  load();
+  setInterval(()=>{ if(!document.hidden) load(); },30000);
+  document.addEventListener('visibilitychange',()=>{ if(!document.hidden) load(); });
 })();
 </script>
 
