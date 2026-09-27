@@ -6,11 +6,15 @@ The ST27 Irish Team site, hosted on Netlify from the `main` branch.
 - `netlify/functions/api.mjs` saves the team form board, comments and posted rounds in Netlify Blobs.
 - Handicap tracking starts from the ST26 handicaps, set in `SQUAD` in `index.html`.
 
-## Team passcode
+## Site password
 
-Anyone can view the site. Saving a form check or a comment needs the team passcode.
-Set it in Netlify under **Site configuration → Environment variables** as `TEAM_CODE`,
-then redeploy. To change the passcode, update the variable and redeploy.
+The whole site is behind a password: the team passcode, set in Netlify under
+**Site configuration → Environment variables** as `TEAM_CODE`. Nothing (pages,
+data or the chat link) is served until it has been entered, and each device then
+stays signed in for 180 days. The gate is `netlify/edge-functions/gate.js`.
+
+Changing `TEAM_CODE` and redeploying signs everyone out, so do that if the
+password ever gets out.
 
 ## Team chat
 

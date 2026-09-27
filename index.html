@@ -1251,7 +1251,7 @@ html.ld-open{overflow:hidden}
     return fetch(API+path,{method,headers:h,body:body?JSON.stringify(body):undefined,cache:'no-store'});
   }
   async function write(method,path,body){
-    if(!code && !(await askCode())) return null;
+    // Signed-in visitors carry a cookie, so only ask for the passcode if refused.
     let r=await call(method,path,body).catch(()=>null);
     if(r&&r.status===401){ code=''; store.set(CODE_KEY,''); if(!(await askCode())) return null; r=await call(method,path,body).catch(()=>null); }
     if(!r){ say('Couldn’t reach the site. Check your connection and try again.'); return null; }
@@ -1306,11 +1306,11 @@ html.ld-open{overflow:hidden}
     if(fab.target==='_blank') return;
     e.preventDefault();
     for(let tries=0;tries<2;tries++){
-      if(!code && !(await askCode())) return;
       const got=await loadChat();
       if(got==='ok'){ location.href=fab.href; return; }
       if(got==='error') break;
       code=''; store.set(CODE_KEY,'');
+      if(!(await askCode())) return;
     }
     say('Couldn\u2019t open the team chat. Try again.');
   });

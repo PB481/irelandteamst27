@@ -1,6 +1,8 @@
 // Shared storage for the ST27 site: the team form board, comment threads and posted rounds.
-// Anyone can read. Writing needs the team passcode, set as TEAM_CODE in Netlify.
+// The site gate (edge-functions/gate.js) keeps signed-out visitors away.
+// Writing needs the team passcode (TEAM_CODE), from the sign-in cookie or a header.
 import { getStore } from "@netlify/blobs";
+import { signedIn } from "../lib/auth.mjs";
 
 const PLAYERS = ["pb", "baz", "stee", "boothy", "pricey", "carlo", "kev"];
 const STATUSES = ["good", "little", "off"];
@@ -55,11 +57,11 @@ async function removeById(store, key, list, id) {
   return json(next);
 }
 
-function checkCode(req) {
+async function checkCode(req) {
   const code = Netlify.env.get("TEAM_CODE");
   if (!code) return json({ error: "not_configured" }, 503);
-  if (req.headers.get("x-team-code") !== code) return json({ error: "bad_code" }, 401);
-  return null;
+  if (req.headers.get("x-team-code") === code || (await signedIn(req, code))) return null;
+  return json({ error: "bad_code" }, 401);
 }
 
 export default async (req) => {
@@ -92,7 +94,7 @@ export default async (req) => {
     }
 
     if (req.method === "POST" && route === "login") {
-      return checkCode(req) || json({ ok: true });
+      return (await checkCode(req)) || json({ ok: true });
     }
 
     // The WhatsApp invite link is set as WHATSAPP_URL in Netlify and only
@@ -100,10 +102,10 @@ export default async (req) => {
     if (req.method === "GET" && route === "chat") {
       const url = Netlify.env.get("WHATSAPP_URL") || "";
       if (!/^https:\/\/(chat\.whatsapp\.com|wa\.me)\/\S+$/.test(url)) return json({ configured: false });
-      return checkCode(req) ? json({ configured: true }) : json({ configured: true, url });
+      return (await checkCode(req)) ? json({ configured: true }) : json({ configured: true, url });
     }
 
-    const denied = checkCode(req);
+    const denied = await checkCode(req);
     if (denied) return denied;
 
     if (req.method === "PUT" && route === "form" && PLAYERS.includes(a)) {
