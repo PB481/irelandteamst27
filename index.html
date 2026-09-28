@@ -318,6 +318,14 @@ html.ld-open{overflow:hidden}
 .site-foot{max-width:1120px;margin:48px auto 0;padding:16px 0 24px;border-top:1px solid var(--rule);text-align:center;font-size:14px}
 .site-foot a{color:var(--muted)}
 .site-foot a:hover{color:var(--green)}
+.week{list-style:none;margin:0 0 14px;padding:0;display:grid;gap:8px;max-width:860px}
+.wk{display:grid;grid-template-columns:92px 1fr;gap:14px;align-items:start;background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:12px 14px}
+.wk-day{display:grid;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.wk-day b{font-family:var(--f-display);font-weight:900;font-size:24px;line-height:1;letter-spacing:0;color:var(--green)}
+.wk p{margin:0;font-size:14.5px;color:var(--muted)}
+.wk .wk-golf{font-size:16px;font-weight:600;color:var(--ink);margin-bottom:2px}
+@media (max-width:520px){.wk{grid-template-columns:1fr;gap:4px}.wk-day{display:flex;gap:8px;align-items:baseline}}
+@media (max-width:620px){nav.tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:-16px;padding-inline:16px}nav.tabs::-webkit-scrollbar{display:none}nav.tabs a{flex:none;font-size:17px;padding:4px 11px}}
 </style>
 
 <div class="ld" id="landing" role="dialog" aria-modal="true" aria-labelledby="ld-title">
@@ -340,7 +348,7 @@ html.ld-open{overflow:hidden}
   <div class="ld-shade"></div>
   <div class="ld-inner">
     <svg class="ld-crest" viewBox="0 0 40 46" width="64" height="74" aria-hidden="true"><path d="M20 1 L38 7 V22 C38 34 30 41 20 45 C10 41 2 34 2 22 V7 Z" fill="#0E6B4C" stroke="#FFFFFF" stroke-width="1.5"/><path d="M8 11 H32 V15 H8 Z" fill="#FFFFFF"/><path d="M8 17 H32 V21 H8 Z" fill="#E0782A"/><text x="20" y="34" text-anchor="middle" font-family="Big Shoulders Display, Arial Narrow, Impact, sans-serif" font-weight="900" font-size="13" fill="#FFFFFF">ST27</text></svg>
-    <div class="ld-eyebrow">Squires' Trophy 2027 · Isle of Arran</div>
+    <div class="ld-eyebrow">Squires' Trophy 2027 · Isle of Arran · 8–12 September</div>
     <h1 id="ld-title" aria-label="Ireland Team, ST27">Ireland Team<span class="yr">ST27</span></h1>
     <p class="ld-lede">Scotland have won too many and are now 7–5. We are the team to bring it back to Ireland.</p>
     <button type="button" class="ld-enter">Enter</button>
@@ -357,7 +365,7 @@ html.ld-open{overflow:hidden}
 <nav class="switch" aria-label="Site"><a href="#team" class="crest" aria-label="ST27 Irish Team home"><svg viewBox="0 0 40 46" width="34" height="39" aria-hidden="true"><path d="M20 1 L38 7 V22 C38 34 30 41 20 45 C10 41 2 34 2 22 V7 Z" fill="var(--green)" stroke="var(--ink)" stroke-width="1.5"/><path d="M8 11 H32 V15 H8 Z" fill="#FFFFFF"/><path d="M8 17 H32 V21 H8 Z" fill="#E0782A"/><text x="20" y="34" text-anchor="middle" font-family="Big Shoulders Display, Arial Narrow, Impact, sans-serif" font-weight="900" font-size="13" fill="#FFFFFF">ST27</text></svg><span>ST27 <b>Irish Team</b></span></a><a href="#team" id="sw-team" aria-current="page">Team</a><a href="#courses" id="sw-courses"><span class="lg">Course notes</span><span class="sm">Courses</span></a><a href="#events" id="sw-events"><span class="lg">Team events</span><span class="sm">Events</span></a><a href="#rounds" id="sw-rounds"><span class="lg">Rounds &amp; handicaps</span><span class="sm">Rounds</span></a></nav>
 <div class="wrap" id="team">
   <header class="hero">
-    <div class="eyebrow">Squires' Trophy 2027 · Ryder Cup · Isle of Arran</div>
+    <div class="eyebrow">Squires' Trophy 2027 · Ryder Cup · Isle of Arran · 8–12 September</div>
     <h1>Team <span class="g">Ireland</span></h1>
     <p class="lede">Seven players, two matchplay champions, thirteen daily majors and 59 Ryder Cup matches of experience between us. Scotland have won too many and are now 7–5. We are the team to bring it back to Ireland.</p>
     <div class="tally">
@@ -755,9 +763,26 @@ html.ld-open{overflow:hidden}
   <header class="hero">
     <div class="eyebrow">Team Ireland · Squires' Trophy 2027 · Isle of Arran</div>
     <h1>Arran <span class="g">Course Notes</span></h1>
-    <p class="lede">Hole by hole: where to aim, where not to go, and every blind shot. Read it the night before, keep it on your phone on the course. If you spot something on a practice round, tap "Add local knowledge" on that hole.</p>
+    <p class="lede">The week, the weather, and all six courses hole by hole: where to aim, where not to go, and every blind shot. Read it the night before, keep it on your phone on the course. If you spot something, tap "Add local knowledge" on that hole.</p>
     <div class="key"><span class="tag t-blind">Blind shot</span><span class="tag t-ob">Out of bounds</span><span class="tag t-water">Water / burn</span><span class="tag">Other hazard</span><span>Blue-numbered holes have a blind shot.</span></div>
   </header>
+
+  <section id="week" aria-labelledby="h-week">
+    <h2 id="h-week">The week</h2>
+    <p class="sec-intro">Four nights, six courses and 96 holes, Wednesday 8 to Sunday 12 September 2027. Each tournament day is a major on the day's total, and the Ryder matches are played over all holes that day. Tee times, the ferry, the tasting and dinners are still to be confirmed for 2027.</p>
+    <ol class="week">
+      <li class="wk"><span class="wk-day"><b>Wed 8</b>Welcome</span><div><p class="wk-golf"><a href="#lochranza">Lochranza</a> fun round</p><p>12:30 ferry from Ardrossan, into Brodick 13:25. Greg collects us from the pier in the minibus. Welcome drinks and whisky tasting at Lochranza Distillery.</p></div></li>
+      <li class="wk"><span class="wk-day"><b>Thu 9</b>Day 1</span><div><p class="wk-golf"><a href="#shiskine">Shiskine</a> 10:00 · 12 holes, then <a href="#brodick">Brodick</a> 14:00 · 18 holes</p><p>Dinner at the Drift Inn, Lamlash.</p></div></li>
+      <li class="wk"><span class="wk-day"><b>Fri 10</b>Day 2</span><div><p class="wk-golf"><a href="#lamlash">Lamlash</a> 10:00 · 18 holes, then <a href="#corrie">Corrie</a> 15:00 · 9 holes</p><p>Corrie Hotel beer garden, and dinner from Mara Fish Bar.</p></div></li>
+      <li class="wk"><span class="wk-day"><b>Sat 11</b>Day 3</span><div><p class="wk-golf"><a href="#whitingbay">Whiting Bay</a> 09:00 · 18 holes, then <a href="#shiskine">Shiskine</a> 14:00 · the final 12</p><p>Final night and prizegiving in Brodick.</p></div></li>
+      <li class="wk"><span class="wk-day"><b>Sun 12</b>Home</span><div><p class="wk-golf">Minigolf in Brodick (compulsory)</p><p>Then the 13:50 ferry.</p></div></li>
+    </ol>
+    <div class="plan">
+      <div><b>Bags</b>Carry bags only: no trolleys or cart bags on the minibus. Ten clubs max is the suggestion. Trolleys and buggies can be hired at the 18-hole courses and Shiskine.</div>
+      <div><b>Golf pass</b>The Arran Golf Pass covers one round at each course. The second round at Shiskine is extra.</div>
+      <div><b>Getting there</b>Fly Dublin or Belfast to Glasgow, then 45 minutes to the Ardrossan ferry.</div>
+    </div>
+  </section>
 
   <section id="weather" aria-labelledby="h-wx">
     <h2 id="h-wx">Arran weather</h2>
@@ -768,10 +793,35 @@ html.ld-open{overflow:hidden}
   </section>
 
   <nav class="tabs" aria-label="Courses">
-    <a href="#shiskine">Shiskine<small>12 holes · par 42</small></a>
-    <a href="#lamlash">Lamlash<small>par 64</small></a>
-    <a href="#brodick">Brodick<small>par 65</small></a>
+    <a href="#lochranza">Lochranza<small>Wed · fun</small></a>
+    <a href="#shiskine">Shiskine<small>Thu &amp; Sat · 12</small></a>
+    <a href="#brodick">Brodick<small>Thu · 18</small></a>
+    <a href="#lamlash">Lamlash<small>Fri · 18</small></a>
+    <a href="#corrie">Corrie<small>Fri · 9</small></a>
+    <a href="#whitingbay">Whiting Bay<small>Sat · 18</small></a>
   </nav>
+
+  <section class="course" id="lochranza" aria-labelledby="h-lo">
+    <div class="c-head">
+      <span class="spec">11-hole par-3 pitch and putt · Lochranza campsite · Wednesday, the fun round</span>
+      <h2 id="h-lo">Lochranza</h2>
+      <p class="intro">Wednesday's welcome round, over the road from the distillery. An 11-hole par-3 pitch and putt laid out around the Chalmadale Burn, with ponds, bridges, its own standing stone, and red deer (and the odd hill sheep) wandering across it.</p>
+    </div>
+    <p class="gap-note"><b>Heads up.</b> The ST27 deck lists Lochranza as a 9-hole, 2,332-yard course. That was the old layout. It's now an 11-hole par-3 pitch and putt, so leave the driver in the bag.</p>
+    <div class="plan">
+      <div><b>Clubs</b>The campsite gives you a pitching iron, putter and balls at reception, included in the fee.</div>
+      <div><b>Paying</b>The Arran Golf Pass is accepted. No booking needed.</div>
+      <div><b>Hours</b>8am to dusk, seven days a week, until the end of October.</div>
+      <div><b>Deer</b>Red deer roam the course. Give them room, and don't count on them moving.</div>
+    </div>
+    <div class="holes">
+<article class="hole" id="lochranza-notes" data-comment-target>
+<div class="hh"><span class="no">11</span><div><h4>The whole course</h4><div class="meta">11 holes · all par 3</div></div></div>
+<p class="hnote">No hole-by-hole guide exists for the new layout. After Wednesday, add the holes worth knowing about.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+    </div>
+  </section>
 
   <section class="course" id="shiskine" aria-labelledby="h-sh">
     <div class="c-head">
@@ -856,130 +906,6 @@ html.ld-open{overflow:hidden}
 <div class="hh"><span class="no">12</span><div><h4>Kilmory</h4><div class="meta">Par 3 · 120 yds · SI 8</div></div></div>
 <div class="tags"><span class="tag t-hazard">Bunkers left &amp; short right</span></div>
 <p class="row"><b class="k k-aim">Aim</b><span>Short of the flag. Short is better than long.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Long. Also the left-side bunkers.</span></p><p class="hnote">Into a south wind this can need a mid-iron; in summer it&#x27;s a wedge. The clubhouse is watching.</p>
-<button class="discuss" type="button">Add local knowledge</button>
-</article>
-    </div>
-  </section>
-
-  <section class="course" id="lamlash" aria-labelledby="h-la">
-    <div class="c-head">
-      <span class="spec">18 holes · par 64 · 4,510 yds white / 3,945 yellow · heathland</span>
-      <h2 id="h-la">Lamlash</h2>
-      <p class="intro">Hilly heathland above Lamlash Bay: 11 par 3s, steep slopes, blind tee shots to marker poles and burns in odd places. It climbs for the first 12 holes and comes back down to finish.</p>
-    </div>
-    <div class="plan">
-      <div><b>Legs</b>Holes 1 to 12 are uphill work. Buggies are worth it for anyone who doesn't fancy the climb.</div>
-      <div><b>Lies</b>Expect uphill and downhill lies all day. Swing within yourself and take an extra club uphill.</div>
-      <div><b>Greens</b>Raised and quick. Short and below the hole is the safe miss on most holes.</div>
-      <div><b>Markers</b>Blind tee shots on 6 and 8, and a carry on 15: aim at the poles and commit.</div>
-    </div>
-    <div class="holes">
-<article class="hole" id="lamlash-1" data-comment-target>
-<div class="hh"><span class="no">1</span><div><h4>Sair Pech</h4><div class="meta">Par 4 · 346 yds · SI 9</div></div></div>
-<div class="tags"><span class="tag t-hazard">Very steep climb</span></div>
-<p class="row"><b class="k k-aim">Aim</b><span>Club up for the approach: it&#x27;s uphill all the way.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Short on the approach.</span></p><p class="hnote">&#x27;Sair pech&#x27; means a hard climb. Pace yourself; there&#x27;s a long way up.</p>
-<button class="discuss" type="button">Add local knowledge</button>
-</article>
-<article class="hole" id="lamlash-2" data-comment-target>
-<div class="hh"><span class="no">2</span><div><h4>Babs Well</h4><div class="meta">Par 3 · 184 yds · SI 5</div></div></div>
-<div class="tags"><span class="tag t-ob">OB left</span><span class="tag t-hazard">Bunker right</span></div>
-<p class="row"><b class="k k-aim">Aim</b><span>Centre, or short-right of the bunker.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Left: OB.</span></p>
-<button class="discuss" type="button">Add local knowledge</button>
-</article>
-<article class="hole" id="lamlash-3" data-comment-target>
-<div class="hh"><span class="no">3</span><div><h4>Goatfell</h4><div class="meta">Par 4 · 387 yds · SI 1</div></div></div>
-<div class="tags"><span class="tag t-hazard">Uneven lies</span></div>
-<p class="row"><b class="k k-aim">Aim</b><span>Get the drive as far up as you can, onto a flat lie.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>A short drive onto a slope.</span></p><p class="hnote">Longest and hardest hole. Take a bogey and move on.</p>
-<button class="discuss" type="button">Add local knowledge</button>
-</article>
-<article class="hole" id="lamlash-4" data-comment-target>
-<div class="hh"><span class="no">4</span><div><h4>The Dyke</h4><div class="meta">Par 3 · 174 yds · SI 15</div></div></div>
-<div class="tags"><span class="tag t-hazard">Runs away short &amp; right</span></div>
-<p class="row"><b class="k k-aim">Aim</b><span>Middle to long-left. A low punch iron is an option.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Short or right: the ball runs off down the hill.</span></p>
-<button class="discuss" type="button">Add local knowledge</button>
-</article>
-<article class="hole" id="lamlash-5" data-comment-target>
-<div class="hh"><span class="no">5</span><div><h4>The Fanks</h4><div class="meta">Par 3 · 201 yds · SI 3</div></div></div>
-
-<p class="row"><b class="k k-aim">Aim</b><span>Middle of the green.</span></p><p class="hnote">The club calls it &#x27;short but very tricky&#x27;.</p><p class="check">Check on the day: hazards and green shape</p>
-<button class="discuss" type="button">Add local knowledge</button>
-</article>
-<article class="hole blindhole" id="lamlash-6" data-comment-target>
-<div class="hh"><span class="no">6</span><div><h4>The Echo</h4><div class="meta">Par 4 · 330 yds · SI 7</div></div></div>
-<div class="tags"><span class="tag t-blind">Blind tee shot</span><span class="tag t-hazard">Three-tier green</span></div>
-<p class="row"><b class="k k-aim">Aim</b><span>The black-and-white pole off the tee.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>The wrong tier on the approach. Check where the pin is before you play.</span></p><p class="hnote">A good drive leaves a short iron.</p>
-<button class="discuss" type="button">Add local knowledge</button>
-</article>
-<article class="hole" id="lamlash-7" data-comment-target>
-<div class="hh"><span class="no">7</span><div><h4>Blairmore</h4><div class="meta">Par 4 · 283 yds · SI 13</div></div></div>
-<div class="tags"><span class="tag t-water">Two burns</span></div>
-<p class="row"><b class="k k-aim">Aim</b><span>Right of the green and let the slope feed it on. Higher handicaps: lay up short of or between the burns.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Hitting into either burn.</span></p><p class="hnote">Driveable for the long hitters.</p><p class="check">Check on the day: exact burn positions</p>
-<button class="discuss" type="button">Add local knowledge</button>
-</article>
-<article class="hole blindhole" id="lamlash-8" data-comment-target>
-<div class="hh"><span class="no">8</span><div><h4>The Beeches</h4><div class="meta">Par 4 · 256 yds · SI 17</div></div></div>
-<div class="tags"><span class="tag t-blind">Blind, steep uphill</span></div>
-<p class="row"><b class="k k-aim">Aim</b><span>Over the marker.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Under-clubbing: it&#x27;s a steep hill.</span></p>
-<button class="discuss" type="button">Add local knowledge</button>
-</article>
-<article class="hole" id="lamlash-9" data-comment-target>
-<div class="hh"><span class="no">9</span><div><h4>Mullaig Mhor</h4><div class="meta">Par 4 · 349 yds · SI 11</div></div></div>
-
-<p class="row"><b class="k k-aim">Aim</b><span>Scorecard only.</span></p><p class="hnote">Glorious view of Holy Isle.</p><p class="check">Check on the day: everything about how it plays</p>
-<button class="discuss" type="button">Add local knowledge</button>
-</article>
-<article class="hole" id="lamlash-10" data-comment-target>
-<div class="hh"><span class="no">10</span><div><h4>Ravine</h4><div class="meta">Par 4 · 241 yds · SI 12</div></div></div>
-<div class="tags"><span class="tag t-water">Burn below</span><span class="tag t-hazard">Dogleg left</span></div>
-<p class="row"><b class="k k-aim">Aim</b><span>Up the hill, with enough club.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Short: the ball rolls back down towards the burn.</span></p>
-<button class="discuss" type="button">Add local knowledge</button>
-</article>
-<article class="hole" id="lamlash-11" data-comment-target>
-<div class="hh"><span class="no">11</span><div><h4>Last Climb</h4><div class="meta">Par 4 · 263 yds · SI 14</div></div></div>
-
-<p class="row"><b class="k k-aim">Aim</b><span>Straight drive up the fairway.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>A careless approach: the club warns you to be careful with the shot to the green.</span></p><p class="hnote">The first hole of &#x27;the triangle&#x27;.</p><p class="check">Check on the day: green hazards</p>
-<button class="discuss" type="button">Add local knowledge</button>
-</article>
-<article class="hole" id="lamlash-12" data-comment-target>
-<div class="hh"><span class="no">12</span><div><h4>Lighthouse</h4><div class="meta">Par 3 · 224 yds · SI 2</div></div></div>
-<div class="tags"><span class="tag t-hazard">Long par 3</span></div>
-<p class="row"><b class="k k-aim">Aim</b><span>Leave the tee shot short, at the bottom of the green, so you chip or putt uphill.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Long, or above the hole.</span></p><p class="hnote">Hardest par 3 on the course. A bogey is fine for most.</p>
-<button class="discuss" type="button">Add local knowledge</button>
-</article>
-<article class="hole" id="lamlash-13" data-comment-target>
-<div class="hh"><span class="no">13</span><div><h4>The Glebe</h4><div class="meta">Par 3 · 186 yds · SI 16</div></div></div>
-<div class="tags"><span class="tag t-ob">Field left: lost balls</span><span class="tag t-hazard">Downhill</span></div>
-<p class="row"><b class="k k-aim">Aim</b><span>Centre, with a club less for the drop.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>A hook: many balls are lost in the field on the left.</span></p>
-<button class="discuss" type="button">Add local knowledge</button>
-</article>
-<article class="hole" id="lamlash-14" data-comment-target>
-<div class="hh"><span class="no">14</span><div><h4>Margnaheglish</h4><div class="meta">Par 3 · 210 yds · SI 6</div></div></div>
-<div class="tags"><span class="tag t-hazard">Bunker front right</span><span class="tag t-hazard">Downhill</span></div>
-<p class="row"><b class="k k-aim">Aim</b><span>Straight down, centre to left-centre.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>The sneaky bunker front right.</span></p><p class="hnote">Holy Isle in view.</p>
-<button class="discuss" type="button">Add local knowledge</button>
-</article>
-<article class="hole" id="lamlash-15" data-comment-target>
-<div class="hh"><span class="no">15</span><div><h4>The Quarry</h4><div class="meta">Par 4 · 284 yds · SI 8</div></div></div>
-<div class="tags"><span class="tag t-hazard">Carry over road &amp; quarry</span></div>
-<p class="row"><b class="k k-aim">Aim</b><span>The marker. Commit to the carry.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Short: the quarry.</span></p><p class="hnote">A pressure tee shot. Play your stock club.</p><p class="check">Check on the day: carry distance</p>
-<button class="discuss" type="button">Add local knowledge</button>
-</article>
-<article class="hole" id="lamlash-16" data-comment-target>
-<div class="hh"><span class="no">16</span><div><h4>Wee Dunt</h4><div class="meta">Par 3 · 98 yds · SI 18</div></div></div>
-
-<p class="row"><b class="k k-aim">Aim</b><span>Centre of the green. Short hole, but give it respect.</span></p><p class="hnote">Watch for the 17th tee, hidden to the left.</p><p class="check">Check on the day: bunkers</p>
-<button class="discuss" type="button">Add local knowledge</button>
-</article>
-<article class="hole" id="lamlash-17" data-comment-target>
-<div class="hh"><span class="no">17</span><div><h4>Manse Road</h4><div class="meta">Par 3 · 201 yds · SI 4</div></div></div>
-<div class="tags"><span class="tag t-hazard">Over Manse Road</span><span class="tag t-hazard">Lip at front of green</span></div>
-<p class="row"><b class="k k-aim">Aim</b><span>Over the road, then chip and run onto the green.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Trying to carry it all to a tight flag.</span></p>
-<button class="discuss" type="button">Add local knowledge</button>
-</article>
-<article class="hole" id="lamlash-18" data-comment-target>
-<div class="hh"><span class="no">18</span><div><h4>Twa Burns</h4><div class="meta">Par 4 · 293 yds · SI 10</div></div></div>
-<div class="tags"><span class="tag t-water">Two burns</span><span class="tag t-hazard">Elevated green</span></div>
-<p class="row"><b class="k k-aim">Aim</b><span>Between the two trees off the tee.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Under-clubbing into the raised green: take one more.</span></p><p class="check">Check on the day: burn positions</p>
 <button class="discuss" type="button">Add local knowledge</button>
 </article>
     </div>
@@ -1110,7 +1036,326 @@ html.ld-open{overflow:hidden}
     </div>
   </section>
 
-  <p class="src">Sources: Shiskine club course page, Golfing Pilgrim, Golf by TourMiss, Golf Monthly, Top100, National Club Golfer; Lamlash club hole-by-hole guide, Golftraxx, GolfPass; Brodick club scorecard (Feb 2026), golfonarran.com, GolfPass and Golfshake reviews. Stroke indexes are men's. Venue for ST27 still to be confirmed. Anything marked "check on the day" couldn't be confirmed from a source.</p>
+  <section class="course" id="lamlash" aria-labelledby="h-la">
+    <div class="c-head">
+      <span class="spec">18 holes · par 64 · 4,510 yds white / 3,945 yellow · heathland</span>
+      <h2 id="h-la">Lamlash</h2>
+      <p class="intro">Hilly heathland above Lamlash Bay: 11 par 3s, steep slopes, blind tee shots to marker poles and burns in odd places. It climbs for the first 12 holes and comes back down to finish.</p>
+    </div>
+    <div class="plan">
+      <div><b>Legs</b>Holes 1 to 12 are uphill work. Buggies are worth it for anyone who doesn't fancy the climb.</div>
+      <div><b>Lies</b>Expect uphill and downhill lies all day. Swing within yourself and take an extra club uphill.</div>
+      <div><b>Greens</b>Raised and quick. Short and below the hole is the safe miss on most holes.</div>
+      <div><b>Markers</b>Blind tee shots on 6 and 8, and a carry on 15: aim at the poles and commit.</div>
+    </div>
+    <div class="holes">
+<article class="hole" id="lamlash-1" data-comment-target>
+<div class="hh"><span class="no">1</span><div><h4>Sair Pech</h4><div class="meta">Par 4 · 346 yds · SI 9</div></div></div>
+<div class="tags"><span class="tag t-hazard">Very steep climb</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Club up for the approach: it&#x27;s uphill all the way.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Short on the approach.</span></p><p class="hnote">&#x27;Sair pech&#x27; means a hard climb. Pace yourself; there&#x27;s a long way up.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="lamlash-2" data-comment-target>
+<div class="hh"><span class="no">2</span><div><h4>Babs Well</h4><div class="meta">Par 3 · 184 yds · SI 5</div></div></div>
+<div class="tags"><span class="tag t-ob">OB left</span><span class="tag t-hazard">Bunker right</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Centre, or short-right of the bunker.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Left: OB.</span></p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="lamlash-3" data-comment-target>
+<div class="hh"><span class="no">3</span><div><h4>Goatfell</h4><div class="meta">Par 4 · 387 yds · SI 1</div></div></div>
+<div class="tags"><span class="tag t-hazard">Uneven lies</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Get the drive as far up as you can, onto a flat lie.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>A short drive onto a slope.</span></p><p class="hnote">Longest and hardest hole. Take a bogey and move on.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="lamlash-4" data-comment-target>
+<div class="hh"><span class="no">4</span><div><h4>The Dyke</h4><div class="meta">Par 3 · 174 yds · SI 15</div></div></div>
+<div class="tags"><span class="tag t-hazard">Runs away short &amp; right</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Middle to long-left. A low punch iron is an option.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Short or right: the ball runs off down the hill.</span></p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="lamlash-5" data-comment-target>
+<div class="hh"><span class="no">5</span><div><h4>The Fanks</h4><div class="meta">Par 3 · 201 yds · SI 3</div></div></div>
+
+<p class="row"><b class="k k-aim">Aim</b><span>Middle of the green.</span></p><p class="hnote">The club calls it &#x27;short but very tricky&#x27;.</p><p class="check">Check on the day: hazards and green shape</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole blindhole" id="lamlash-6" data-comment-target>
+<div class="hh"><span class="no">6</span><div><h4>The Echo</h4><div class="meta">Par 4 · 330 yds · SI 7</div></div></div>
+<div class="tags"><span class="tag t-blind">Blind tee shot</span><span class="tag t-hazard">Three-tier green</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>The black-and-white pole off the tee.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>The wrong tier on the approach. Check where the pin is before you play.</span></p><p class="hnote">A good drive leaves a short iron.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="lamlash-7" data-comment-target>
+<div class="hh"><span class="no">7</span><div><h4>Blairmore</h4><div class="meta">Par 4 · 283 yds · SI 13</div></div></div>
+<div class="tags"><span class="tag t-water">Two burns</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Right of the green and let the slope feed it on. Higher handicaps: lay up short of or between the burns.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Hitting into either burn.</span></p><p class="hnote">Driveable for the long hitters.</p><p class="check">Check on the day: exact burn positions</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole blindhole" id="lamlash-8" data-comment-target>
+<div class="hh"><span class="no">8</span><div><h4>The Beeches</h4><div class="meta">Par 4 · 256 yds · SI 17</div></div></div>
+<div class="tags"><span class="tag t-blind">Blind, steep uphill</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Over the marker.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Under-clubbing: it&#x27;s a steep hill.</span></p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="lamlash-9" data-comment-target>
+<div class="hh"><span class="no">9</span><div><h4>Mullaig Mhor</h4><div class="meta">Par 4 · 349 yds · SI 11</div></div></div>
+
+<p class="row"><b class="k k-aim">Aim</b><span>Scorecard only.</span></p><p class="hnote">Glorious view of Holy Isle.</p><p class="check">Check on the day: everything about how it plays</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="lamlash-10" data-comment-target>
+<div class="hh"><span class="no">10</span><div><h4>Ravine</h4><div class="meta">Par 4 · 241 yds · SI 12</div></div></div>
+<div class="tags"><span class="tag t-water">Burn below</span><span class="tag t-hazard">Dogleg left</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Up the hill, with enough club.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Short: the ball rolls back down towards the burn.</span></p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="lamlash-11" data-comment-target>
+<div class="hh"><span class="no">11</span><div><h4>Last Climb</h4><div class="meta">Par 4 · 263 yds · SI 14</div></div></div>
+
+<p class="row"><b class="k k-aim">Aim</b><span>Straight drive up the fairway.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>A careless approach: the club warns you to be careful with the shot to the green.</span></p><p class="hnote">The first hole of &#x27;the triangle&#x27;.</p><p class="check">Check on the day: green hazards</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="lamlash-12" data-comment-target>
+<div class="hh"><span class="no">12</span><div><h4>Lighthouse</h4><div class="meta">Par 3 · 224 yds · SI 2</div></div></div>
+<div class="tags"><span class="tag t-hazard">Long par 3</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Leave the tee shot short, at the bottom of the green, so you chip or putt uphill.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Long, or above the hole.</span></p><p class="hnote">Hardest par 3 on the course. A bogey is fine for most.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="lamlash-13" data-comment-target>
+<div class="hh"><span class="no">13</span><div><h4>The Glebe</h4><div class="meta">Par 3 · 186 yds · SI 16</div></div></div>
+<div class="tags"><span class="tag t-ob">Field left: lost balls</span><span class="tag t-hazard">Downhill</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Centre, with a club less for the drop.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>A hook: many balls are lost in the field on the left.</span></p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="lamlash-14" data-comment-target>
+<div class="hh"><span class="no">14</span><div><h4>Margnaheglish</h4><div class="meta">Par 3 · 210 yds · SI 6</div></div></div>
+<div class="tags"><span class="tag t-hazard">Bunker front right</span><span class="tag t-hazard">Downhill</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Straight down, centre to left-centre.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>The sneaky bunker front right.</span></p><p class="hnote">Holy Isle in view.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="lamlash-15" data-comment-target>
+<div class="hh"><span class="no">15</span><div><h4>The Quarry</h4><div class="meta">Par 4 · 284 yds · SI 8</div></div></div>
+<div class="tags"><span class="tag t-hazard">Carry over road &amp; quarry</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>The marker. Commit to the carry.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Short: the quarry.</span></p><p class="hnote">A pressure tee shot. Play your stock club.</p><p class="check">Check on the day: carry distance</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="lamlash-16" data-comment-target>
+<div class="hh"><span class="no">16</span><div><h4>Wee Dunt</h4><div class="meta">Par 3 · 98 yds · SI 18</div></div></div>
+
+<p class="row"><b class="k k-aim">Aim</b><span>Centre of the green. Short hole, but give it respect.</span></p><p class="hnote">Watch for the 17th tee, hidden to the left.</p><p class="check">Check on the day: bunkers</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="lamlash-17" data-comment-target>
+<div class="hh"><span class="no">17</span><div><h4>Manse Road</h4><div class="meta">Par 3 · 201 yds · SI 4</div></div></div>
+<div class="tags"><span class="tag t-hazard">Over Manse Road</span><span class="tag t-hazard">Lip at front of green</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Over the road, then chip and run onto the green.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Trying to carry it all to a tight flag.</span></p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="lamlash-18" data-comment-target>
+<div class="hh"><span class="no">18</span><div><h4>Twa Burns</h4><div class="meta">Par 4 · 293 yds · SI 10</div></div></div>
+<div class="tags"><span class="tag t-water">Two burns</span><span class="tag t-hazard">Elevated green</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Between the two trees off the tee.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Under-clubbing into the raised green: take one more.</span></p><p class="check">Check on the day: burn positions</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+    </div>
+  </section>
+
+  <section class="course" id="corrie" aria-labelledby="h-co">
+    <div class="c-head">
+      <span class="spec">9 holes · par 31 · 1,915 / 1,610 yds · Sannox · Friday 15:00</span>
+      <h2 id="h-co">Corrie</h2>
+      <p class="intro">A nine-hole course from 1892 at Sannox, just north of Corrie, climbing into the hills with Goatfell and Glen Sannox behind and the Clyde in front. Small, firm greens that are hard to read. Friday afternoon, then the Corrie Hotel beer garden.</p>
+    </div>
+    <p class="gap-note"><b>Local knowledge wanted.</b> The club only publishes a line or two per hole, so these notes are thin. Whoever plays it first, add what you find.</p>
+    <div class="plan">
+      <div><b>Stroke index</b>The card is 18 holes: the nine played twice. The first number is for the first time round, the second for the second.</div>
+      <div><b>Shared fairway</b>The 3rd and 7th share a fairway. Look up before you hit.</div>
+      <div><b>Paying</b>No tee booking. The Arran Golf Pass covers it; otherwise pay at the clubhouse, honesty box or tea room.</div>
+      <div><b>Busy times</b>Members' medals run on Wednesday evenings and Saturday mornings, so Friday afternoon should be quiet.</div>
+    </div>
+    <div class="holes">
+<article class="hole" id="corrie-1" data-comment-target>
+<div class="hh"><span class="no">1</span><div><h4>Druid</h4><div class="meta">Par 3 · 135 yds white · 127 yellow · SI 17 / 18</div></div></div>
+
+<p class="hnote">A straightforward tee shot to start. The greens are firm, so the putts are tricky.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="corrie-2" data-comment-target>
+<div class="hh"><span class="no">2</span><div><h4>Punchbowl</h4><div class="meta">Par 3 · 199 yds white · 134 yellow · SI 3 / 4</div></div></div>
+<div class="tags"><span class="tag t-hazard">Tree in front of the green</span><span class="tag t-hazard">Small green</span></div>
+<p class="hnote">A hard par 3. The tree in front of a small green makes birdies rare.</p><p class="check">Check on the day: which side of the tree to play</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="corrie-3" data-comment-target>
+<div class="hh"><span class="no">3</span><div><h4>Rowan Tree</h4><div class="meta">Par 4 · 248 yds white · 219 yellow · SI 5 / 6</div></div></div>
+<div class="tags"><span class="tag t-hazard">Shared fairway with the 7th</span></div>
+<p class="row"><b class="k k-avoid">Avoid</b><span>Players coming the other way on the 7th.</span></p><p class="hnote">Possibly the best view on Arran, according to the club.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="corrie-4" data-comment-target>
+<div class="hh"><span class="no">4</span><div><h4>Well</h4><div class="meta">Par 3 · 171 yds white · 130 yellow · SI 13 / 14</div></div></div>
+<div class="tags"><span class="tag t-hazard">Wind right to left</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Allow for the wind, which usually blows right to left.</span></p><p class="hnote">Club choice changes a lot with the conditions.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="corrie-5" data-comment-target>
+<div class="hh"><span class="no">5</span><div><h4>Mount Pleasant</h4><div class="meta">Par 3 · 124 yds white · 97 yellow · SI 11 / 12</div></div></div>
+<div class="tags"><span class="tag t-hazard">Steep uphill</span><span class="tag t-hazard">Small green</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Take extra club for the climb.</span></p><p class="hnote">A short, steep uphill hole to a small green, and the wind picks up at the top.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="corrie-6" data-comment-target>
+<div class="hh"><span class="no">6</span><div><h4>Smearing Horse</h4><div class="meta">Par 4 · 309 yds white · 238 yellow · SI 1 / 2</div></div></div>
+
+<p class="hnote">The hardest hole: a demanding tee shot, especially from the back. With some pin positions you can putt from off the green.</p><p class="check">Check on the day: the line off the tee</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="corrie-7" data-comment-target>
+<div class="hh"><span class="no">7</span><div><h4>Garden</h4><div class="meta">Par 4 · 307 yds white · 302 yellow · SI 9 / 10</div></div></div>
+<div class="tags"><span class="tag t-hazard">Shared fairway with the 3rd</span><span class="tag t-hazard">Undulating green</span></div>
+<p class="row"><b class="k k-avoid">Avoid</b><span>Players coming the other way on the 3rd.</span></p><p class="hnote">Amazing views to the mainland. The green has plenty of borrow.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="corrie-8" data-comment-target>
+<div class="hh"><span class="no">8</span><div><h4>Orchard</h4><div class="meta">Par 3 · 156 yds white · 138 yellow · SI 15 / 16</div></div></div>
+<div class="tags"><span class="tag t-hazard">Bunker front</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Come in from the left or the right rather than over the front bunker.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Coming up short into the bunker.</span></p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="corrie-9" data-comment-target>
+<div class="hh"><span class="no">9</span><div><h4>Home</h4><div class="meta">Par 4 · 266 yds white · 225 yellow · SI 7 / 8</div></div></div>
+<div class="tags"><span class="tag t-water">Burn</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Decide before you tee off: lay up short of the burn or take it on.</span></p><p class="hnote">Risk and reward to finish.</p><p class="check">Check on the day: where the burn crosses</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+    </div>
+  </section>
+
+  <section class="course" id="whitingbay" aria-labelledby="h-wb">
+    <div class="c-head">
+      <span class="spec">18 holes · par 63 white / 62 yellow · 4,451 / 4,092 yds · hillside · Saturday 09:00</span>
+      <h2 id="h-wb">Whiting Bay</h2>
+      <p class="intro">A hill course above the village, founded 1895: a stiff climb over the first four holes, then views across the Firth of Clyde to Holy Isle and Ben Lomond. Ten par 3s, blind shots, bells and fast, tricky greens. Saturday morning, before the final at Shiskine.</p>
+    </div>
+    <div class="plan">
+      <div><b>Bells</b>The 7th and 14th are blind from the tee. Wait for the bell before you drive, and ring it when you've putted out.</div>
+      <div><b>Markers</b>Marker posts show the line on the 1st, 8th, 9th, 10th, 12th and 14th. Trust them.</div>
+      <div><b>Tees</b>The 9th is a par 4 off the whites but a par 3 off the yellows. Agree tees before the match starts.</div>
+      <div><b>The climb</b>Holes 1 to 4 climb steadily. Carry bags make it easier.</div>
+    </div>
+    <div class="holes">
+<article class="hole" id="whitingbay-1" data-comment-target>
+<div class="hh"><span class="no">1</span><div><h4>Up &#x27;n&#x27; Awa</h4><div class="meta">Par 4 · 225 yds white · 218 yellow · SI 17</div></div></div>
+<div class="tags"><span class="tag t-blind">Marker from the tee</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Follow the marker from the raised tee. The green is generous.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Under-clubbing: it plays longer than the yardage.</span></p><p class="hnote">A gentle opener, though you&#x27;ll barely see the top of the flag from the tee.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="whitingbay-2" data-comment-target>
+<div class="hh"><span class="no">2</span><div><h4>Peat Road</h4><div class="meta">Par 3 · 195 yds white · 186 yellow · SI 7</div></div></div>
+<div class="tags"><span class="tag t-hazard">Trouble both sides</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Towards the Glenashdale hills. The fairway gathers left.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>A slice or a hook: there&#x27;s trouble on both sides, and the course runs out behind the green.</span></p><p class="hnote">First big view over the Firth of Clyde. Watch for players on the 18th tee as you cross that fairway.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="whitingbay-3" data-comment-target>
+<div class="hh"><span class="no">3</span><div><h4>Wee Wullie</h4><div class="meta">Par 3 · 178 yds white · 150 yellow · SI 3</div></div></div>
+<div class="tags"><span class="tag t-hazard">Small green</span><span class="tag t-hazard">Slope left</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>The small green. If in doubt, lay up short and chip on for an up and down.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>The slope on the left.</span></p><p class="hnote">A long par 3 that punishes a wayward shot. A careful bogey is no disaster.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="whitingbay-4" data-comment-target>
+<div class="hh"><span class="no">4</span><div><h4>Plateau</h4><div class="meta">Par 3 · 112 yds white · 83 yellow · SI 13</div></div></div>
+<div class="tags"><span class="tag t-hazard">Gully left and long</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Front to middle. Don&#x27;t over-club.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Long or left into the steep gully. Short right, the bank feeds the ball back down the fairway.</span></p><p class="hnote">Short but tricky. The climb is nearly done by here, and the views are worth it.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="whitingbay-5" data-comment-target>
+<div class="hh"><span class="no">5</span><div><h4>Goat Fell</h4><div class="meta">Par 3 · 209 yds white · 207 yellow · SI 5</div></div></div>
+<div class="tags"><span class="tag t-hazard">Slope right</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Keep it left.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Right: the slope takes the ball into the rough.</span></p><p class="hnote">A long par 3 you can drive for a par or better.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="whitingbay-6" data-comment-target>
+<div class="hh"><span class="no">6</span><div><h4>Dry Dyke</h4><div class="meta">Par 4 · 265 yds white · 252 yellow · SI 15</div></div></div>
+<div class="tags"><span class="tag t-hazard">Ditch</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Big hitters carry the ditch. Everyone else lays up short of it.</span></p><p class="hnote">Short and straightforward, with a big green and all the trouble in view. Watch for players driving the 8th on your right.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole blindhole" id="whitingbay-7" data-comment-target>
+<div class="hh"><span class="no">7</span><div><h4>Braes &#x27;n&#x27; Dunes</h4><div class="meta">Par 3 · 231 yds white · 229 yellow · SI 11</div></div></div>
+<div class="tags"><span class="tag t-blind">Blind tee shot</span><span class="tag t-hazard">Bell</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Shorter hitters go left of the marker and use the run-off from the hill.</span></p><p class="hnote">Wait for the bell before you drive, and ring it when you&#x27;ve putted out. One of the trickiest greens on the course. There&#x27;s a wooden shelter by the green.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="whitingbay-8" data-comment-target>
+<div class="hh"><span class="no">8</span><div><h4>The Gully</h4><div class="meta">Par 4 · 355 yds white · 346 yellow · SI 1</div></div></div>
+<div class="tags"><span class="tag t-hazard">Gully before the green</span><span class="tag t-blind">Marker for the line</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Most of us: lay up to the marker, then play over the gully. Big hitters can get home in two.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Driving into the rough beyond the brow, and over-hitting the approach into the rough beyond the 9th fairway. The distance is deceptive.</span></p><p class="hnote">The hardest hole on the course, playing back towards the sea.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="whitingbay-9" data-comment-target>
+<div class="hh"><span class="no">9</span><div><h4>Wallace&#x27;s</h4><div class="meta">Par 4 white / 3 yellow · 252 yds white · 212 yellow · SI 9</div></div></div>
+
+<p class="row"><b class="k k-aim">Aim</b><span>Follow the marker.</span></p><p class="hnote">A par 4 off the whites but a par 3 off the yellows. A gentle hole to build the card before the turn, with great views back over the 8th and 4th greens.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole blindhole" id="whitingbay-10" data-comment-target>
+<div class="hh"><span class="no">10</span><div><h4>Clear Spring</h4><div class="meta">Par 4 · 313 yds white · 259 yellow · SI 10</div></div></div>
+<div class="tags"><span class="tag t-blind">Blind tee shot</span><span class="tag t-hazard">Raised green</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Slightly right of centre, then a good iron to the raised green. The brave take the marker: the Tiger Line straight at the green.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Balls sticking on the bank above the green.</span></p><p class="hnote">The bank above the green can gather an approach. Big views from the green and the 11th tee.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="whitingbay-11" data-comment-target>
+<div class="hh"><span class="no">11</span><div><h4>Auld Feartie</h4><div class="meta">Par 3 · 201 yds white · 166 yellow · SI 2</div></div></div>
+<div class="tags"><span class="tag t-ob">OB left</span><span class="tag t-hazard">Deep rough right</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>The middle of the green. It needs an accurate tee shot.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Left is out of bounds; right is deep rough.</span></p><p class="hnote">A risk to any card. The best views on the course: Ben Lomond and the Arrochar hills on a clear day.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="whitingbay-12" data-comment-target>
+<div class="hh"><span class="no">12</span><div><h4>Clyde View</h4><div class="meta">Par 4 · 322 yds white · 315 yellow · SI 12</div></div></div>
+<div class="tags"><span class="tag t-hazard">Ridge</span><span class="tag t-hazard">Trees right</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Big hitters go left of the marker over the ridge. Shorter hitters lay up before the hill.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>The trees and rough on the right, and going over the back: the rough behind is “perilous”.</span></p><p class="hnote">Not long, but testing. Holy Isle and Ben Lomond from the top of the ridge.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="whitingbay-13" data-comment-target>
+<div class="hh"><span class="no">13</span><div><h4>Glenashdale</h4><div class="meta">Par 3 · 249 yds white · 221 yellow · SI 4</div></div></div>
+<div class="tags"><span class="tag t-hazard">Raised green</span><span class="tag t-hazard">Heavy rough right</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>A fade onto the raised green, or lay up and play a good lofted second.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>A slice into the heavy rough on the right, and anything long.</span></p><p class="hnote">As hard a par 3 as you&#x27;ll find anywhere.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole blindhole" id="whitingbay-14" data-comment-target>
+<div class="hh"><span class="no">14</span><div><h4>Holy Isle</h4><div class="meta">Par 4 · 254 yds white · 229 yellow · SI 18</div></div></div>
+<div class="tags"><span class="tag t-blind">Wait for the bell</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Slightly left of the marker and down the hill.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>A short slice into the shrubs and trees on the right, or a short hook into the trouble on the left.</span></p><p class="hnote">The easiest hole on the card: a par or better chance for everyone. Ring the bell when you&#x27;ve finished.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="whitingbay-15" data-comment-target>
+<div class="hh"><span class="no">15</span><div><h4>Fairy Glen</h4><div class="meta">Par 4 · 323 yds white · 307 yellow · SI 14</div></div></div>
+<div class="tags"><span class="tag t-hazard">Trouble left</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Plenty of room right. Let the second run down onto the green.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Drifting left off the tee at all costs, and over-clubbing onto the green.</span></p><p class="hnote">Downhill and shorter than it looks. Big hitters can drive it.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="whitingbay-16" data-comment-target>
+<div class="hh"><span class="no">16</span><div><h4>Roun Again</h4><div class="meta">Par 3 · 203 yds white · 202 yellow · SI 8</div></div></div>
+<div class="tags"><span class="tag t-hazard">Uphill</span><span class="tag t-hazard">Trees long</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Take more club: it plays longer than it looks. The fairway is generous up to a raised green.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Over the green into the trees.</span></p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="whitingbay-17" data-comment-target>
+<div class="hh"><span class="no">17</span><div><h4>The Cauldron</h4><div class="meta">Par 3 · 131 yds white · 127 yellow · SI 16</div></div></div>
+<div class="tags"><span class="tag t-hazard">Tiered green</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Keep below the hole.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Being above it: chips and putts can run off the green and back down the fairway.</span></p><p class="hnote">A fiendish, twisting, multi-tiered green. Home of many a hole in one, and many a six.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+<article class="hole" id="whitingbay-18" data-comment-target>
+<div class="hh"><span class="no">18</span><div><h4>Springhill</h4><div class="meta">Par 4 · 433 yds white · 383 yellow · SI 6</div></div></div>
+<div class="tags"><span class="tag t-ob">OB right</span></div>
+<p class="row"><b class="k k-aim">Aim</b><span>Drive left.</span></p><p class="row"><b class="k k-avoid">Avoid</b><span>Right: out of bounds all the way down.</span></p><p class="hnote">One of the best finishing holes on the island. The green is lightning fast with danger on every side. Watch for players crossing from the 2nd tee before you drive.</p>
+<button class="discuss" type="button">Add local knowledge</button>
+</article>
+    </div>
+  </section>
+
+<p class="src">Sources: ST27 Arran proposal deck; Shiskine club course page, Golfing Pilgrim, Golf by TourMiss, Golf Monthly, Top100, National Club Golfer; Lamlash club hole-by-hole guide, Golftraxx, GolfPass; Brodick club scorecard (Feb 2026); Whiting Bay club hole-by-hole guide and Golf Sherpa scorecard; Corrie Golf Club course page; Lochranza Campsite golf page; golfonarran.com, GolfPass and Golfshake reviews. Stroke indexes are men's. Anything marked "check on the day" couldn't be confirmed from a source.</p>
 </div>
 <div class="wrap" id="events" hidden>
   <header class="hero">
@@ -1223,7 +1468,7 @@ html.ld-open{overflow:hidden}
   function viewFor(h){
     if(h==='events'||/^ev-/.test(h)) return 'events';
     if(/^(rounds|hcp|post-round|latest)$/.test(h)) return 'rounds';
-    if(h==='courses'||h==='weather'||/^(shiskine|lamlash|brodick)(-\d+)?$/.test(h)) return 'courses';
+    if(h==='courses'||h==='weather'||h==='week'||/^(shiskine|lamlash|brodick|whitingbay|corrie|lochranza)(-\d+|-notes)?$/.test(h)) return 'courses';
     return 'team';
   }
   function show(){
@@ -1563,7 +1808,7 @@ html.ld-open{overflow:hidden}
 
 <script>
 (function(){
-  const SPOTS=[['shiskine','Shiskine',55.503,-5.327],['lamlash','Lamlash',55.536,-5.128],['brodick','Brodick',55.583,-5.146]];
+  const SPOTS=[['lochranza','Lochranza',55.705,-5.293],['shiskine','Shiskine',55.503,-5.327],['brodick','Brodick',55.583,-5.146],['lamlash','Lamlash',55.536,-5.128],['corrie','Corrie',55.664,-5.155],['whitingbay','Whiting Bay',55.487,-5.093]];
   const WMO={0:['Clear','☀️'],1:['Mostly clear','🌤️'],2:['Partly cloudy','⛅'],3:['Overcast','☁️'],45:['Fog','🌫️'],48:['Freezing fog','🌫️'],
     51:['Light drizzle','🌦️'],53:['Drizzle','🌦️'],55:['Heavy drizzle','🌧️'],56:['Freezing drizzle','🌧️'],57:['Freezing drizzle','🌧️'],
     61:['Light rain','🌦️'],63:['Rain','🌧️'],65:['Heavy rain','🌧️'],66:['Freezing rain','🌧️'],67:['Freezing rain','🌧️'],
@@ -1606,7 +1851,7 @@ html.ld-open{overflow:hidden}
       +'<span class="wx-verdict '+cls+'">Today overall: '+vtxt+'</span>'
       +'</div><ol class="wx-days">'+days+'</ol>';
     when.textContent='Updated '+new Date().toLocaleTimeString('en-IE',{hour:'2-digit',minute:'2-digit'})+'.';
-    const b=data[2].current, [bt]=wmo(b.weather_code);
+    const b=data[SPOTS.findIndex(s=>s[0]==='brodick')].current, [bt]=wmo(b.weather_code);
     chip.innerHTML='🏝️ Arran now: <b>'+Math.round(b.temperature_2m)+'°</b> '+esc(bt.toLowerCase())+' · wind '+Math.round(b.wind_speed_10m)+' mph '+compass(b.wind_direction_10m);
     chip.hidden=false;
   }

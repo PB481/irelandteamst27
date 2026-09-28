@@ -109,7 +109,7 @@ button:focus-visible{outline:3px solid #F0954A;outline-offset:4px}
   <div class="ld-shade"></div>
   <div class="ld-inner">
     <svg class="ld-crest" viewBox="0 0 40 46" width="64" height="74" aria-hidden="true"><path d="M20 1 L38 7 V22 C38 34 30 41 20 45 C10 41 2 34 2 22 V7 Z" fill="#0E6B4C" stroke="#FFFFFF" stroke-width="1.5"/><path d="M8 11 H32 V15 H8 Z" fill="#FFFFFF"/><path d="M8 17 H32 V21 H8 Z" fill="#E0782A"/><text x="20" y="34" text-anchor="middle" font-family="Big Shoulders Display, Arial Narrow, Impact, sans-serif" font-weight="900" font-size="13" fill="#FFFFFF">ST27</text></svg>
-    <div class="ld-eyebrow">Squires' Trophy 2027 · Isle of Arran</div>
+    <div class="ld-eyebrow">Squires' Trophy 2027 · Isle of Arran · 8–12 September</div>
     <h1 aria-label="Ireland Team, ST27">Ireland Team<span class="yr">ST27</span></h1>
     <form method="post" action="/login">
       <label for="pw">Team members only. Enter the team password.</label>

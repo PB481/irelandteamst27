@@ -25,5 +25,5 @@ set, the button stays hidden.
 
 ## Weather
 
-Live Arran forecasts (Shiskine, Lamlash, Brodick) come from Open-Meteo in the
+Live Arran forecasts for all six ST27 courses come from Open-Meteo in the
 browser. No key needed.
